@@ -22,61 +22,19 @@
                 <div class="slide-table container">
                     <div class="table-cell">
                         <div class="hero-slide-content float-right text-right">
-                            <h3 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="0.8s">welcome to drive on
+                            <h3 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="0.8s">selamat datang di
                             </h3>
-                            <h1 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.2s">the best
-                                <span>safety</span> measures</h1>
-                            <p class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.6s">Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit, minim veniamsed sed do <br />eiusmod tempor maksu rez
-                                ut labore magna do eiusmod</p>
+                            <h1 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.2s"><span>smpn satu atap 1 maligano</span></h1>
                             <div class="button-group">
                                 <a href="#" class="btn transparent wow fadeInLeft" data-wow-duration=".9s"
-                                    data-wow-delay="2.4s">book lesson</a>
+                                    data-wow-delay="2.4s">materi pembelajaran</a>
                                 <a href="#" class="btn color wow fadeInLeft" data-wow-duration=".9s"
-                                    data-wow-delay="2s">learn more</a>
+                                    data-wow-delay="2s">baca selanjutnya</a>
                             </div>
                         </div>
                         <div class="find-course-form float-left text-left wow fadeInUp" data-wow-duration=".9s"
                             data-wow-delay="3s">
-                            <h5><span>find your course</span><i class="icofont icofont-police-car"></i></h5>
-                            <form action="#">
-                                <div class="course-input"><i class="icofont icofont-user-alt-3"></i> <input type="text"
-                                        placeholder="Your Name" /></div>
-                                <div class="course-input"><i class="icofont icofont-envelope"></i> <input type="text"
-                                        placeholder="Your E-mail" /></div>
-                                <div class="course-input"><i class="icofont icofont-phone"></i> <input type="text"
-                                        placeholder="Phone" /></div>
-                                <div class="course-select"><i class="icofont icofont-clock-time"></i>
-                                    <select class="cusselect">
-                                        <option>Time</option>
-                                        <option>9:00 AM</option>
-                                        <option>12:00 PM</option>
-                                        <option>03:00 PM</option>
-                                        <option>06:00 PM</option>
-                                    </select>
-                                </div>
-                                <div class="course-select course-date"><i class="icofont icofont-calendar"></i><input
-                                        class="date-picker" type="text" placeholder="Date"></div>
-                                <div class="course-select"><i class="icofont icofont-copy-alt"></i>
-                                    <select class="cusselect">
-                                        <option>Course</option>
-                                        <option>Course 1</option>
-                                        <option>Course 2</option>
-                                        <option>Course 3</option>
-                                        <option>Course 4</option>
-                                    </select>
-                                </div>
-                                <div class="course-select"><i class="icofont icofont-car-alt-4"></i>
-                                    <select class="cusselect">
-                                        <option>Car Type</option>
-                                        <option>Car Type 1</option>
-                                        <option>Car Type 2</option>
-                                        <option>Car Type 3</option>
-                                        <option>Car Type 4</option>
-                                    </select>
-                                </div>
-                                <div class="course-submit"><input type="submit" value="Send us" /></div>
-                            </form>
+                            @include('home.layout.course')
                         </div>
                     </div>
                 </div>
@@ -85,61 +43,19 @@
                 <div class="slide-table container">
                     <div class="table-cell">
                         <div class="hero-slide-content float-left text-left">
-                            <h3 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="0.8s">welcome to drive on
+                            <h3 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="0.8s">selamat datang di
                             </h3>
-                            <h1 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.2s">the best
-                                <span>safety</span> measures</h1>
-                            <p class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.6s">Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit, minim veniamsed sed do <br />eiusmod tempor maksu rez
-                                ut labore magna do eiusmod</p>
+                            <h1 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.2s"><span>smpn satu atap 1 maligano</span></h1>
                             <div class="button-group">
                                 <a href="#" class="btn transparent wow fadeInRight" data-wow-duration=".9s"
-                                    data-wow-delay="2s">book lesson</a>
+                                    data-wow-delay="2s">materi pembelajaran</a>
                                 <a href="#" class="btn color wow fadeInRight" data-wow-duration=".9s"
-                                    data-wow-delay="2.4s">learn more</a>
+                                    data-wow-delay="2.4s">baca selanjutnya</a>
                             </div>
                         </div>
                         <div class="find-course-form float-right text-left wow fadeInUp" data-wow-duration=".9s"
                             data-wow-delay="3s">
-                            <h5><span>find your course</span><i class="icofont icofont-police-car"></i></h5>
-                            <form action="#">
-                                <div class="course-input"><i class="icofont icofont-user-alt-3"></i> <input type="text"
-                                        placeholder="Your Name" /></div>
-                                <div class="course-input"><i class="icofont icofont-envelope"></i> <input type="text"
-                                        placeholder="Your E-mail" /></div>
-                                <div class="course-input"><i class="icofont icofont-phone"></i> <input type="text"
-                                        placeholder="Phone" /></div>
-                                <div class="course-select"><i class="icofont icofont-clock-time"></i>
-                                    <select class="cusselect">
-                                        <option>Time</option>
-                                        <option>9:00 AM</option>
-                                        <option>12:00 PM</option>
-                                        <option>03:00 PM</option>
-                                        <option>06:00 PM</option>
-                                    </select>
-                                </div>
-                                <div class="course-select course-date"><i class="icofont icofont-calendar"></i><input
-                                        class="date-picker" type="text" placeholder="Date"></div>
-                                <div class="course-select"><i class="icofont icofont-copy-alt"></i>
-                                    <select class="cusselect">
-                                        <option>Course</option>
-                                        <option>Course 1</option>
-                                        <option>Course 2</option>
-                                        <option>Course 3</option>
-                                        <option>Course 4</option>
-                                    </select>
-                                </div>
-                                <div class="course-select"><i class="icofont icofont-car-alt-4"></i>
-                                    <select class="cusselect">
-                                        <option>Car Type</option>
-                                        <option>Car Type 1</option>
-                                        <option>Car Type 2</option>
-                                        <option>Car Type 3</option>
-                                        <option>Car Type 4</option>
-                                    </select>
-                                </div>
-                                <div class="course-submit"><input type="submit" value="Send us" /></div>
-                            </form>
+                            @include('home.layout.course')
                         </div>
                     </div>
                 </div>
@@ -148,18 +64,14 @@
                 <div class="slide-table container">
                     <div class="table-cell">
                         <div class="hero-slide-content text-center">
-                            <h3 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="0.8s">welcome to drive on
+                            <h3 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="0.8s">selamat datang di
                             </h3>
-                            <h1 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.2s">the best
-                                <span>safety</span> measures</h1>
-                            <p class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.6s">Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit, minim veniamsed sed do <br />eiusmod tempor maksu rez
-                                ut labore magna do eiusmod</p>
+                            <h1 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.2s"><span>smpn satu atap 1 maligano</span></h1>
                             <div class="button-group">
                                 <a href="#" class="btn transparent wow fadeInLeft" data-wow-duration=".9s"
-                                    data-wow-delay="2s">book lesson</a>
+                                    data-wow-delay="2s">materi pembelajaran</a>
                                 <a href="#" class="btn color wow fadeInRight" data-wow-duration=".9s"
-                                    data-wow-delay="2s">learn more</a>
+                                    data-wow-delay="2s">baca selanjutnya</a>
                             </div>
                         </div>
                     </div>
@@ -171,71 +83,13 @@
                 <!-- Section Title -->
                 <div class="row">
                     <div class="section-title text-center col-12 mb-45">
-                        <h3 class="heading">our features</h3>
+                        <h3 class="heading">profil</h3>
                         <div class="excerpt">
-                            <p>Lorem ipsum dolor sit amet, consectetur maksu rez do eiusmod tempor magna aliqua</p>
+                            <p>UPTD SMP NEGERI SATU ATAP 1 MALIGANO merupakan salah satu sekolah jenjang SMP berstatus Negeri yang berada di wilayah Kec. Maligano, Kab. Muna, Sulawesi Tenggara. UPTD SMP NEGERI SATU ATAP 1 MALIGANO didirikan pada tanggal 1 Januari 1970 dengan Nomor SK Pendirian yang berada dalam naungan Kementerian Pendidikan dan Kebudayaan. Kepala Sekolah UPTD SMP NEGERI SATU ATAP 1 MALIGANO saat ini adalah Mustarim. Operator yang bertanggung jawab adalah Zaiba, S. Pd. , M. Pd. .
+
+                                Dengan adanya keberadaan UPTD SMP NEGERI SATU ATAP 1 MALIGANO, diharapkan dapat memberikan kontribusi dalam mencerdaskan anak bangsa di wilayah Kec. Maligano, Kab. Muna.</p>
                         </div>
                         <i class="icofont icofont-traffic-light"></i>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- Left Feature -->
-                    <div class="feature-wrapper feature-left text-right col-lg-4 col-12">
-                        <div class="single-feature">
-                            <div class="icon"><i class="icofont icofont-file-spreadsheet"></i></div>
-                            <div class="text fix">
-                                <h4>Quick License</h4>
-                                <p>Lorem ipsum dolor sit amet to be consectetur adipiscing elit, sed do eiusmod tempor.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="single-feature">
-                            <div class="icon"><i class="icofont icofont-car-alt-4"></i></div>
-                            <div class="text fix">
-                                <h4>Unlimited Car Support</h4>
-                                <p>Lorem ipsum dolor sit amet to be consectetur adipiscing elit, sed do eiusmod tempor.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="single-feature">
-                            <div class="icon"><i class="icofont icofont-video-alt"></i></div>
-                            <div class="text fix">
-                                <h4>Video Classes</h4>
-                                <p>Lorem ipsum dolor sit amet to be consectetur adipiscing elit, sed do eiusmod tempor.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Feature Image -->
-                    <div class="feature-image text-center col-lg-4 col-12">
-                        <img src="{{ asset('home') }}/img/feature.png" alt="feature" />
-                    </div>
-                    <!-- Right Feature -->
-                    <div class="feature-wrapper feature-right text-left col-lg-4 col-12">
-                        <div class="single-feature">
-                            <div class="icon"><i class="icofont icofont-man-in-glasses"></i></div>
-                            <div class="text fix">
-                                <h4>Experience Instructors</h4>
-                                <p>Lorem ipsum dolor sit amet to be consectetur adipiscing elit, sed do eiusmod tempor.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="single-feature">
-                            <div class="icon"><i class="icofont icofont-clock-time"></i></div>
-                            <div class="text fix">
-                                <h4>Any Time Any Place</h4>
-                                <p>Lorem ipsum dolor sit amet to be consectetur adipiscing elit, sed do eiusmod tempor.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="single-feature">
-                            <div class="icon"><i class="icofont icofont-direction-sign"></i></div>
-                            <div class="text fix">
-                                <h4>Learning Roads</h4>
-                                <p>Lorem ipsum dolor sit amet to be consectetur adipiscing elit, sed do eiusmod tempor.
-                                </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
