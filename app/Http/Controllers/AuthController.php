@@ -20,7 +20,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $request->has('remember'))) {
             // Periksa apakah statusenabled pengguna bernilai true
             if (Auth::user()->statusenabled == true) {
-                return redirect()->route('dashboard.index')->with('alert', 'Selamat Datang');
+                return redirect()->route('dashboard.index')->with('success', 'Selamat Datang');
             } else {
                 // Logout jika statusenabled adalah false
                 Auth::logout();
@@ -30,7 +30,7 @@ class AuthController extends Controller
             }
         }
 
-        return redirect()->back()->with('login', 'Nama pengguna atau password salah');
+        return redirect()->back()->with('success', 'Nama pengguna atau password salah');
     }
 
     public function logout(Request $request)

@@ -391,4 +391,5 @@
                 </div>
             </div>
         </div>
+
         @include('home.layout.footer')

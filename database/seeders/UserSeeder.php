@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'name' => 'Operator',
             'nikname' => 'operator',
             'email' => 'operator@gmail.com',
-            'password' => Hash::make('12345'),
+            'password' => Hash::make('@@12345@@'),
             'role' => 'operator',
         ]);
     }

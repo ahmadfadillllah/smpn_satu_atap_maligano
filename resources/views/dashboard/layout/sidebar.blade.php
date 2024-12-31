@@ -44,11 +44,13 @@
                         <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
                     </a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="../admins/course-dashboard.html">Dashboard</a></li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('jadwalpembelajaran.index') }}">Jadwal Pembelajaran</a></li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('materipembelajaran.index') }}">Materi Pembelajaran</a></li>
                     </ul>
+
                 </li>
                 <li class="pc-item">
-                    <a href="#" class="pc-link">
+                    <a href="{{ route('ppdb.index') }}" class="pc-link">
                         <span class="pc-micon">
                             <svg class="pc-icon">
                                 <use xlink:href="#custom-box-1"></use>
@@ -58,7 +60,7 @@
                     </a>
                 </li>
                 <li class="pc-item">
-                    <a href="#" class="pc-link">
+                    <a href="{{ route('galeri.index') }}" class="pc-link">
                         <span class="pc-micon">
                             <svg class="pc-icon">
                                 <use xlink:href="#custom-fatrows"></use>
@@ -68,7 +70,7 @@
                     </a>
                 </li>
                 <li class="pc-item">
-                    <a href="#" class="pc-link">
+                    <a href="{{ route('profil.index') }}" class="pc-link">
                         <span class="pc-micon">
                             <svg class="pc-icon">
                                 <use xlink:href="#custom-user"></use>
@@ -78,6 +80,16 @@
                     </a>
                 </li>
                 <li class="pc-item pc-caption"><label>Configuration</label></li>
+                <li class="pc-item">
+                    <a href="#" class="pc-link">
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-setting-outline"></use>
+                            </svg>
+                        </span>
+                        <span class="pc-mtext">Pengaturan</span>
+                    </a>
+                </li>
                 <li class="pc-item">
                     <a href="{{ route('logout') }}" class="pc-link">
                         <span class="pc-micon">

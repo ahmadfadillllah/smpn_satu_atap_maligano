@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/css/style.css" id="main-style-link">
     <script src="{{ asset('dashboard') }}/assets/js/tech-stack.js"></script>
     <link rel="stylesheet" href="{{ asset('dashboard') }}/assets/css/style-preset.css">
+    {{-- Sweetalert 2 --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-layout="vertical" data-pc-direction="ltr"
     data-pc-theme_contrast="" data-pc-theme="light">
@@ -29,3 +31,4 @@
             <div class="loader-fill"></div>
         </div>
     </div>
+    @include('notification.sweetalert')

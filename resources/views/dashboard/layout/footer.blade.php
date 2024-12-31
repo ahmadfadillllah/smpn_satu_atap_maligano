@@ -172,10 +172,10 @@
             </ul>
         </div>
     </div>
-</div><!-- [Page Specific JS] start -->
+</div>
 <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="{{ asset('dashboard') }}/assets/js/plugins/apexcharts.min.js"></script>
-<script src="{{ asset('dashboard') }}/assets/js/pages/dashboard-default.js"></script><!-- [Page Specific JS] end -->
+<script src="{{ asset('dashboard') }}/assets/js/pages/dashboard-default.js"></script>
 <!-- Required Js -->
 <script src="{{ asset('dashboard') }}/assets/js/plugins/popper.min.js"></script>
 <script src="{{ asset('dashboard') }}/assets/js/plugins/simplebar.min.js"></script>

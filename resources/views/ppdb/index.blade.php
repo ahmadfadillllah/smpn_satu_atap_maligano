@@ -1,4 +1,4 @@
-@include('dashboard.layout.head', ['title' => 'Dashboard'])
+@include('dashboard.layout.head', ['title' => 'PPDB'])
 @include('dashboard.layout.sidebar')
 @include('dashboard.layout.header')
 <div class="pc-container">
