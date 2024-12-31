@@ -7,7 +7,7 @@
                         <div class="flex-shrink-0"><img src="{{ asset('dashboard') }}/assets/images/user/avatar-1.jpg" alt="user-image"
                                 class="user-avtar wid-45 rounded-circle"></div>
                         <div class="flex-grow-1 ms-3 me-2">
-                            <h6 class="mb-0">Jonh Smith</h6><small>Administrator</small>
+                            <h6 class="mb-0">{{ Auth::user()->name }}</h6><small>{{ Auth::user()->role }}</small>
                         </div><a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse"
                             href="#pc_sidebar_userlink"><svg class="pc-icon">
                                 <use xlink:href="#custom-sort-outline"></use>
@@ -16,7 +16,7 @@
                     <div class="collapse pc-user-links" id="pc_sidebar_userlink">
                         <div class="pt-3">
                             <a href="#!"><i class="ti ti-settings"></i> <span>Settings</span> </a>
-                            <a href="#!"><i class="ti ti-power"></i> <span>Logout</span></a></div>
+                            <a href="{{ route('logout') }}"><i class="ti ti-power"></i> <span>Logout</span></a></div>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                 </li>
                 <li class="pc-item pc-caption"><label>Configuration</label></li>
                 <li class="pc-item">
-                    <a href="#" class="pc-link">
+                    <a href="{{ route('logout') }}" class="pc-link">
                         <span class="pc-micon">
                             <svg class="pc-icon">
                                 <use xlink:href="#custom-logout"></use>

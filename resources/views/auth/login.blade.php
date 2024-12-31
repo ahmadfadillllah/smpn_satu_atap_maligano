@@ -39,17 +39,18 @@
                     <div class="card-body">
                         <div class="text-center"><a href="#"><img src="{{ asset('logo') }}/tut-wuri.png" alt="images" class="img-fluid img-auth-side" style="width: 50px;height:50px"></a></div>
                         <h4 class="text-center f-w-500 mb-3">Masuk menggunakan akunmu</h4>
-                        <div class="mb-3"><input type="email" class="form-control" id="floatingInput"
-                                placeholder="Nama Pengguna"></div>
-                        <div class="mb-3"><input type="password" class="form-control" id="floatingInput1"
-                                placeholder="Kata Sandi"></div>
-                        <div class="d-flex mt-1 justify-content-between align-items-center">
-                            <div class="form-check"><input class="form-check-input input-primary" type="checkbox"
-                                    id="customCheckc1" checked=""> <label class="form-check-label text-muted"
-                                    for="customCheckc1">Ingat saya?</label></div>
-                            <h6 class="text-secondary f-w-400 mb-0"><a href="forgot-password-v2.html">Lupa kata sandi?</a></h6>
-                        </div>
-                        <div class="d-grid mt-4"><button type="button" class="btn btn-primary">Login</button></div>
+                        <form action="{{ route('login.post') }}" method="POST">
+                            @csrf
+                            <div class="mb-3"><input type="text" class="form-control" id="floatingInput" placeholder="Nama Pengguna" name="nikname"></div>
+                            <div class="mb-3"><input type="password" class="form-control" id="floatingInput1" placeholder="Kata Sandi" name="password"></div>
+                            <div class="d-flex mt-1 justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" checked=""> <label class="form-check-label text-muted" for="customCheckc1">Ingat saya?</label>
+                                </div>
+                                <h6 class="text-secondary f-w-400 mb-0"><a href="forgot-password-v2.html">Lupa kata sandi?</a></h6>
+                            </div>
+                            <div class="d-grid mt-4"><button type="submit" class="btn btn-primary">Login</button></div>
+                        </form>
                     </div>
                 </div>
             </div>

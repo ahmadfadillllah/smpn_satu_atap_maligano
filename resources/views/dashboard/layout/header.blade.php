@@ -94,9 +94,8 @@
                                     <div class="flex-shrink-0"><img src="{{ asset('dashboard') }}/assets/images/user/avatar-2.jpg"
                                             alt="user-image" class="user-avtar wid-35"></div>
                                     <div class="flex-grow-1 ms-3">
-                                        <h6 class="mb-1">Carson Darrin 🖖</h6><span><a
-                                                href="../cdn-cgi/l/email-protection.html" class="__cf_email__"
-                                                data-cfemail="d5b6b4a7a6babbfbb1b4a7a7bcbb95b6bab8a5b4bbacfbbcba">[email&#160;protected]</a></span>
+                                        <h6 class="mb-1">{{ Auth::user()->name }} 🖖</h6><span><a
+                                                href="#" >{{ Auth::user()->role }}</a></span>
                                     </div>
                                 </div>
                                 <hr class="border-secondary border-opacity-50">
@@ -110,9 +109,9 @@
                                 <hr class="border-secondary border-opacity-50">
 
                                 <hr class="border-secondary border-opacity-50">
-                                <div class="d-grid mb-3"><button class="btn btn-primary"><svg class="pc-icon me-2">
+                                <div class="d-grid mb-3"><a href="{{ route('logout') }}" class="btn btn-primary"><svg class="pc-icon me-2">
                                             <use xlink:href="#custom-logout-1-outline"></use>
-                                        </svg>Logout</button></div>
+                                        </svg>Logout</a></div>
 
                             </div>
                         </div>
