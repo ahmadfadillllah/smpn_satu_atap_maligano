@@ -23,24 +23,35 @@
             <ul class="pc-navbar">
                 <li class="pc-item pc-caption"><label>Navigation</label></li>
                 <li class="pc-item">
-                    <a href="#" class="pc-link">
+                    <a href="{{ route('dashboard.index') }}" class="pc-link">
                         <span class="pc-micon">
-                            <svg class="pc-icon">
-                                <use xlink:href="#custom-story"></use>
-                            </svg>
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/dashboard.png" >
                         </span>
                         <span class="pc-mtext">Dashboard</span>
                     </a>
+                </li>
+                <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link">
+                        <span class="pc-micon">
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/data-collection.png" >
+                        </span>
+                        <span class="pc-mtext">Master</span>
+                        <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+                    </a>
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link" href="{{ route('guru.index') }}">Guru</a></li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('kelas.index') }}">Kelas</a></li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('namapelajaran.index') }}">Nama Pelajaran</a></li>
+                    </ul>
+
                 </li>
                 <li class="pc-item pc-caption"><label>Fitures</label></li>
                 <li class="pc-item pc-hasmenu">
                     <a href="#!" class="pc-link">
                         <span class="pc-micon">
-                            <svg class="pc-icon">
-                                <use xlink:href="#custom-layer"></use>
-                            </svg>
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/education.png" >
                         </span>
-                        <span class="pc-mtext">Online Courses</span>
+                        <span class="pc-mtext">Akademik</span>
                         <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
                     </a>
                     <ul class="pc-submenu">
@@ -52,9 +63,7 @@
                 <li class="pc-item">
                     <a href="{{ route('ppdb.index') }}" class="pc-link">
                         <span class="pc-micon">
-                            <svg class="pc-icon">
-                                <use xlink:href="#custom-box-1"></use>
-                            </svg>
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/register.png" >
                         </span>
                         <span class="pc-mtext">PPDB</span>
                     </a>
@@ -62,9 +71,7 @@
                 <li class="pc-item">
                     <a href="{{ route('galeri.index') }}" class="pc-link">
                         <span class="pc-micon">
-                            <svg class="pc-icon">
-                                <use xlink:href="#custom-fatrows"></use>
-                            </svg>
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/image-galery.png" >
                         </span>
                         <span class="pc-mtext">Galeri</span>
                     </a>
@@ -72,9 +79,7 @@
                 <li class="pc-item">
                     <a href="{{ route('profil.index') }}" class="pc-link">
                         <span class="pc-micon">
-                            <svg class="pc-icon">
-                                <use xlink:href="#custom-user"></use>
-                            </svg>
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/programmer.png" >
                         </span>
                         <span class="pc-mtext">Profile</span>
                     </a>
@@ -83,9 +88,7 @@
                 <li class="pc-item">
                     <a href="#" class="pc-link">
                         <span class="pc-micon">
-                            <svg class="pc-icon">
-                                <use xlink:href="#custom-setting-outline"></use>
-                            </svg>
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/gear.png" >
                         </span>
                         <span class="pc-mtext">Pengaturan</span>
                     </a>
@@ -93,9 +96,7 @@
                 <li class="pc-item">
                     <a href="{{ route('logout') }}" class="pc-link">
                         <span class="pc-micon">
-                            <svg class="pc-icon">
-                                <use xlink:href="#custom-logout"></use>
-                            </svg>
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/check-out.png" >
                         </span>
                         <span class="pc-mtext">Logout</span>
                     </a>

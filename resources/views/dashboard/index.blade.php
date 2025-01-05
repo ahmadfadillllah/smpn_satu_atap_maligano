@@ -250,4 +250,5 @@
     setInterval(updateClock, 1000);
 
 </script>
+<script src="{{ asset('dashboard') }}/assets/js/plugins/apexcharts.min.js"></script>
 @include('dashboard.layout.footer')

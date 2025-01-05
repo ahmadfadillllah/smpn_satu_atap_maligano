@@ -30,7 +30,7 @@ class AuthController extends Controller
             }
         }
 
-        return redirect()->back()->with('success', 'Nama pengguna atau password salah');
+        return redirect()->back()->with('info', 'Nama pengguna atau password salah');
     }
 
     public function logout(Request $request)
