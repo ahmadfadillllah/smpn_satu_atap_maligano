@@ -11,6 +11,7 @@ use App\Http\Controllers\MateriPembelajaranController;
 use App\Http\Controllers\NamaPelajaranController;
 use App\Http\Controllers\PPDBController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -67,5 +68,11 @@ Route::group(['middleware' => ['auth']], function(){
     //Profil
     Route::get('/profile/index', [ProfilController::class, 'index'])->name('profil.index');
     Route::post('/profile/update', [ProfilController::class, 'update'])->name('profil.update');
+
+    //Users
+    Route::get('/users/index', [UsersController::class, 'index'])->name('users.index');
+    Route::get('/users/status/{id}', [UsersController::class, 'statusEnabled'])->name('users.status');
+    Route::get('/users/reset-password/{id}', [UsersController::class, 'resetPassword'])->name('users.resetPassword');
+    Route::post('/users/insert', [UsersController::class, 'insert'])->name('users.insert');
 
 });

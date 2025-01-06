@@ -85,6 +85,16 @@
                     </a>
                 </li>
                 <li class="pc-item pc-caption"><label>Configuration</label></li>
+                @if (Auth::user()->role == 'Operator')
+                    <li class="pc-item">
+                        <a href="{{ route('users.index') }}" class="pc-link">
+                            <span class="pc-micon">
+                                <img src="{{ asset('dashboard') }}/assets/images/widget/team.png" >
+                            </span>
+                            <span class="pc-mtext">Users</span>
+                        </a>
+                    </li>
+                @endif
                 <li class="pc-item">
                     <a href="#" class="pc-link">
                         <span class="pc-micon">

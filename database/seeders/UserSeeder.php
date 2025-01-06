@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'nikname' => 'operator',
             'email' => 'operator@gmail.com',
             'password' => Hash::make('@@12345@@'),
-            'role' => 'operator',
+            'role' => 'Operator',
         ]);
 
         DB::table('profil_sekolah_m')->insert([
