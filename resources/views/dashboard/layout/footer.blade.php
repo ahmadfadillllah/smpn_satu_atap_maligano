@@ -185,7 +185,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('dashboard') }}/assets/js/plugins/dataTables.min.js"></script>
 <script src="{{ asset('dashboard') }}/assets/js/plugins/dataTables.bootstrap5.min.js"></script>
-<script src="{{ asset('dashboard') }}/assets/js/plugins/ckeditor/inline/ckeditor.js"></script>
+
 
 <script>
     layout_change('light');

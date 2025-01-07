@@ -77,6 +77,7 @@
     </div>
 </section>
 @include('dashboard.layout.footer')
+<script src="{{ asset('dashboard') }}/assets/js/plugins/ckeditor/inline/ckeditor.js"></script>
 <script>
     (function () {
         InlineEditor.create(document.querySelector('.ck-profile')).catch((error) => {

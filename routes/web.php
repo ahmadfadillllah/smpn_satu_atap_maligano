@@ -51,9 +51,11 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/materi-pembelajaran/insert', [MateriPembelajaranController::class, 'insert'])->name('materipembelajaran.insert');
     Route::get('/materi-pembelajaran/delete/{uuid}', [MateriPembelajaranController::class, 'delete'])->name('materipembelajaran.delete');
 
-
     //PPDB
     Route::get('/ppdb/index', [PPDBController::class, 'index'])->name('ppdb.index');
+    Route::get('/ppdb/insert', [PPDBController::class, 'insert'])->name('ppdb.insert');
+    Route::get('/ppdb/delete/{uuid}', [PPDBController::class, 'delete'])->name('ppdb.delete');
+    Route::post('/ppdb/post', [PPDBController::class, 'post'])->name('ppdb.post');
 
     //Galeri
     Route::get('/galeri/index', [GaleriController::class, 'index'])->name('galeri.index');
