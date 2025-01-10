@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('syarat_pendaftaran')->nullable();
             $table->integer('kuota')->nullable();
             $table->string('status')->nullable();
-            $table->string('gambar')->nullable();
+            $table->foreignId('file_id')->constrained('file_t');
             $table->timestamps();
         });
     }

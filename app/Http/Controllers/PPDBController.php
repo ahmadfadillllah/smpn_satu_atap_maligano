@@ -28,7 +28,7 @@ class PPDBController extends Controller
 
     public function post(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $request->validate([
             'gambar' => 'required|image|max:10240', // Maksimal 10MB
         ]);
@@ -51,6 +51,8 @@ class PPDBController extends Controller
                 $fileRecord->save();  // Simpan file terlebih dahulu untuk mendapatkan ID-nya
             }
 
+            // dd($fileRecord);
+
             // Menyimpan data MateriPembelajaran setelah file berhasil disimpan
             PPDB::create([
                 'uuid' => (string) Uuid::uuid4()->toString(),
@@ -62,11 +64,27 @@ class PPDBController extends Controller
             ]);
 
 
-            return redirect()->back()->with('success','PPDB berhasil ditambahkan');
+            return redirect()->route('ppdb.index')->with('success','PPDB berhasil ditambahkan');
 
         } catch (\Throwable $th) {
-            return redirect()->back()->with('info','PPDB gagal ditambahkan'. $th->getMessage());
+            return redirect()->route('ppdb.index')->with('info','PPDB gagal ditambahkan'. $th->getMessage());
         }
 
+    }
+
+    public function delete($uuid)
+    {
+        try {
+            PPDB::where('uuid', $uuid) ->update(
+                [
+                    'statusenabled' => false
+                ]
+            );
+
+            return redirect()->back()->with('success','PPDB berhasil dihapus');
+
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('info','PPDB gagal dihapus');
+        }
     }
 }

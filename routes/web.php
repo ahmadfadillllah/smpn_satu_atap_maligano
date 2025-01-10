@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.profile');
 
+Route::get('/galeri', [HomeController::class, 'galeri'])->name('home.galeri');
+
+Route::get('/materipembelajaran', [HomeController::class, 'materipembelajaran'])->name('home.materipembelajaran');
+
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login/post', [AuthController::class, 'login_post'])->name('login.post');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

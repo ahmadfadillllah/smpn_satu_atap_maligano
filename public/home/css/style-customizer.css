@@ -23,7 +23,7 @@ div.style-customizer {
 }
 
 .style-customizer a.button:hover {
-    color:#2395ec !important; 
+    color:#2395ec !important;
 }
 
 .style-customizer.closed {
@@ -61,7 +61,7 @@ div.style-customizer .buy-button {
     display: inline-block;
     z-index: 2;
     position: absolute;
-    background: #fff;
+    background: black;
     width: 100%;
 }
 

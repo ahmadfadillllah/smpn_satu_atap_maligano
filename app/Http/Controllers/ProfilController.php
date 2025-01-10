@@ -16,7 +16,7 @@ class ProfilController extends Controller
 
     public function update(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         try {
             ProfilSekolah::where('uuid', $request->uuid) ->update(
                 [

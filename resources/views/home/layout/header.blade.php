@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="navbar-header col-auto">
-                    <a href="index.html" class="logo navbar-brand"><img id="logo_img"
+                    <a href="#" class="logo navbar-brand"><img id="logo_img"
                             src="{{ asset('home') }}/img/logo/color-1.png" alt="logo" /></a>
                 </div>
                 <div class="main-menu mean-menu col-auto">
@@ -25,11 +25,11 @@
                         <ul>
                             <li class="active"><a href="{{ route('home.profile') }}">profil</a></li>
                             <li><a href="about.html">ppdb</a></li>
-                            <li><a href="about.html">galeri</a></li>
+                            <li><a href="{{ route('home.galeri') }}">galeri</a></li>
                             <li><a href="about.html">jadwal pembelajaran</a></li>
-                            <li><a href="about.html">materi pembelajaran</a></li>
+                            <li><a href="{{ route('home.materipembelajaran') }}">materi pembelajaran</a></li>
 
-                            <li><a href="contact.html">login</a></li>
+                            <li><a href="{{ route('login') }}" target="_blank">login</a></li>
                         </ul>
                     </nav>
                 </div>

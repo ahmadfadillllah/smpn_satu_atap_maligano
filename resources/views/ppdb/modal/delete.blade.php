@@ -12,7 +12,7 @@
                     <h4>Yakin menghapus PPDB ini?</h4>
                     <p class="text-muted"> Data yang dihapus tidak ditampilkan kembali</p>
                     <!-- Toogle to second dialog -->
-                    <a href="{{ route('namaPPDB.delete', $ppdb->uuid) }}" type="button"  class="btn btn-danger">Hapus</a>
+                    <a href="{{ route('ppdb.delete', $ppdb->uuid) }}" type="button"  class="btn btn-danger">Hapus</a>
                 </div>
             </div>
         </div>

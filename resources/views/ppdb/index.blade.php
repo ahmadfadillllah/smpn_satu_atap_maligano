@@ -40,7 +40,7 @@
                                     @foreach ($data['ppdb'] as $ppdb)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $ppdb->pengumuman_pendaftaran }}</td>
+                                            <td>{!! $ppdb->pengumuman_pendaftaran !!}</td>
                                             <td>{{ $ppdb->kuota }}</td>
                                             <td>{{ $ppdb->status }}</td>
                                             <td>

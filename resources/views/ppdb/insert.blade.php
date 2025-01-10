@@ -6,7 +6,7 @@
 
         <div class="row">
             <!-- [ Classic-editor ] start -->
-            <form action="{{ route('ppdb.post') }}" method="POST">
+            <form action="{{ route('ppdb.post') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-sm-6 col-lg-6">
                     <div class="card">
@@ -14,11 +14,11 @@
                             <div id="cke5-inline-demo">
                                 <h5>Pengumuman Pendaftaran</h5>
                                 <div>
-                                    <textarea name="pengumuman_pendaftaran" id="pengumuman_pendaftaran" required></textarea>
+                                    <textarea name="pengumuman_pendaftaran" id="pengumuman_pendaftaran"></textarea>
                                 </div>
                                 <h5>Syarat Pendaftaran</h5>
                                 <div>
-                                    <textarea name="syarat_pendaftaran" id="syarat_pendaftaran" required></textarea>
+                                    <textarea name="syarat_pendaftaran" id="syarat_pendaftaran"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-4 mb-3">

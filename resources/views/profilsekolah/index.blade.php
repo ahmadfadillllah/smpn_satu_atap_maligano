@@ -15,14 +15,14 @@
                             <div id="cke5-inline-demo">
                                 <h5>Profil Sekolah</h5>
                                 <div class="ck-profile">
-                                    <textarea name="profile">{!! $profil->profile !!}</textarea>
+                                    <textarea name="profile" id="profile">{!! $profil->profile !!}</textarea>
                                 </div>
                                 <div class="row">
                                     <!-- Kolom untuk Visi -->
                                     <div class="col-md-6 mb-4">
                                         <h5>Visi</h5>
                                         <div class="ck-visi">
-                                            <textarea name="visi">{!! $profil->visi !!}</textarea>
+                                            <textarea name="visi" id="visi">{!! $profil->visi !!}</textarea>
                                         </div>
                                     </div>
 
@@ -30,7 +30,7 @@
                                     <div class="col-md-6 mb-4">
                                         <h5>Misi</h5>
                                         <div class="ck-misi">
-                                            <textarea name="misi">{!! $profil->misi !!}</textarea>
+                                            <textarea name="misi" id="misi">{!! $profil->misi !!}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -77,20 +77,20 @@
     </div>
 </section>
 @include('dashboard.layout.footer')
-<script src="{{ asset('dashboard') }}/assets/js/plugins/ckeditor/inline/ckeditor.js"></script>
+<script src="{{ asset('dashboard') }}/assets/js/plugins/ckeditor/classic/ckeditor.js"></script>
 <script>
     (function () {
-        InlineEditor.create(document.querySelector('.ck-profile')).catch((error) => {
+        ClassicEditor.create(document.querySelector('#profile')).catch((error) => {
             console.error(error);
         });
     })();
     (function () {
-        InlineEditor.create(document.querySelector('.ck-visi')).catch((error) => {
+        ClassicEditor.create(document.querySelector('#visi')).catch((error) => {
             console.error(error);
         });
     })();
     (function () {
-        InlineEditor.create(document.querySelector('.ck-misi')).catch((error) => {
+        ClassicEditor.create(document.querySelector('#misi')).catch((error) => {
             console.error(error);
         });
     })();
