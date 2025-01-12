@@ -84,6 +84,30 @@
                         <span class="pc-mtext">Profile</span>
                     </a>
                 </li>
+                <li class="pc-item">
+                    <a href="{{ route('usulanmateri.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/proposal.png" >
+                        </span>
+                        <span class="pc-mtext">Usulan Materi</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('kontak.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/operator.png" >
+                        </span>
+                        <span class="pc-mtext">Kontak</span>
+                    </a>
+                </li>
+                <li class="pc-item">
+                    <a href="{{ route('rating.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/good-feedback.png" >
+                        </span>
+                        <span class="pc-mtext">Rating</span>
+                    </a>
+                </li>
                 <li class="pc-item pc-caption"><label>Configuration</label></li>
                 @if (Auth::user()->role == 'Operator')
                     <li class="pc-item">

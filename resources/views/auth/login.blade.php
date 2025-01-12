@@ -46,7 +46,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" checked=""> <label class="form-check-label text-muted" for="customCheckc1">Ingat saya?</label>
                                 </div>
-                                <h6 class="text-secondary f-w-400 mb-0"><a href="forgot-password-v2.html">Lupa kata sandi?</a></h6>
+                                <h6 class="text-secondary f-w-400 mb-0"><a href="{{ route('home.profile') }}">Home</a></h6>
                             </div>
                             <div class="d-grid mt-4"><button type="submit" class="btn btn-primary">Login</button></div>
                         </form>

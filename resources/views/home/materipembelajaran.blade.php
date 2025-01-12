@@ -1,4 +1,4 @@
-@include('home.layout.head')
+@include('home.layout.head', ['title' =>'Materi Pembelajaran'])
 
 <body>
     <div class="preloader">
@@ -27,49 +27,43 @@
         </div>
         <div id="gallery-area" class="gallery-area bg-gray pt-90 pb-90">
             <div class="container">
-                <!-- Gallery Filter -->
-                <div class="gallery-filter text-center">
-                    <button class="active" data-filter="*">all</button>
-                    <button data-filter=".Foto">foto</button>
-                    <button data-filter=".Video">video</button>
-                </div>
-                <!-- Gallery Grid -->
-                <div class="gallery-grid row mb-20">
-                    @foreach ($galeri as $gl)
-                    <div class="gallery-item {{ $gl->kategori }} col-lg-3 col-md-4 col-12">
-                        @if ($gl->kategori == 'Foto')
-                            <a href="{{ asset('storage/') }}/{{ $gl->path }}" class="gallery-image image-popup">
-                                <img src="{{ asset('storage/') }}/{{ $gl->path }}" alt="img" class="img-fluid w-100">
-                                <div class="content">
-                                    <i class="icofont icofont-search"></i>
-                                    <h4>Class Test</h4>
+                <div class="container text-center">
+                    <div class="row">
+                        @foreach ($materi as $mt)
+                        <div class="col-sm-3">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    @if ($mt->format == 'xlsx') <img src="{{ asset('dashboard') }}/assets/images/application/img-file-xls.svg" style="width: 70px;" class="img-fluid">@endif
+                                @if ($mt->format == 'pdf') <img src="{{ asset('dashboard') }}/assets/images/application/img-file-pdf.svg" style="width: 70px;" class="img-fluid">@endif
+                                @if ($mt->format == 'xls') <img src="{{ asset('dashboard') }}/assets/images/application/img-file-xls.svg" style="width: 70px;" class="img-fluid">@endif
+                                @if ($mt->format == 'doc') <img src="{{ asset('dashboard') }}/assets/images/application/img-file-doc.svg" style="width: 70px;" class="img-fluid">@endif
+                                @if ($mt->format == 'rar') <img src="{{ asset('dashboard') }}/assets/images/application/img-file-rar.svg" style="width: 70px;" class="img-fluid">@endif
+                                @if ($mt->format == 'ppt') <img src="{{ asset('dashboard') }}/assets/images/application/img-file-ppt.svg" style="width: 70px;" class="img-fluid">@endif
+                                @if ($mt->format == 'pptx') <img src="{{ asset('dashboard') }}/assets/images/application/img-file-ppt.svg" style="width: 70px;" class="img-fluid">@endif
+                                @if ($mt->format == 'txt') <img src="{{ asset('dashboard') }}/assets/images/application/img-file-txt.svg" style="width: 70px;" class="img-fluid">@endif
+                                  <h5 class="card-title">{{ $mt->judul }}</h5>
+                                  <table class="table">
+                                    <tbody style="text-align:left">
+                                      <tr>
+                                        <th scope="row">Kelas</th>
+                                        <td>{{ $mt->kelas }}</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Penerbit</th>
+                                        <td>{{ $mt->penerbit }}</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Tahun</th>
+                                        <td>{{ $mt->tahun_terbit }}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <a href="{{ asset('storage') }}/{{ $mt->path }}" class="btn btn-primary" target="_blank">Download</a>
                                 </div>
-                            </a>
-                            @else
-                            <a href="{{ asset('storage/' . $gl->path) }}" type="video/{{ pathinfo($gl->path, PATHINFO_EXTENSION) }}" class="gallery-image image-popup">
-                                <video class="img-fluid w-100" controls autoplay>
-                                    <source src="{{ asset('storage/' . $gl->path) }}" type="video/{{ pathinfo($gl->path, PATHINFO_EXTENSION) }}">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <div class="content">
-                                    <i class="icofont icofont-search"></i>
-                                    <h4>Class Test</h4>
-                                </div>
-                            </a>
-                            @endif
-
+                              </div>
+                        </div>
+                        @endforeach
                     </div>
-                    @endforeach
-
-                </div>
-                <div class="pagination text-center">
-                    <ul>
-                        <li><a href="#"><i class="icofont icofont-simple-left"></i></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#"><i class="icofont icofont-simple-right"></i></a></li>
-                    </ul>
                 </div>
             </div>
         </div>

@@ -80,6 +80,7 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Kelas</th>
+                                                            <th>Semester</th>
                                                             <th>Pelajaran</th>
                                                             <th>Jam</th>
                                                             <th>Aksi</th>
@@ -88,11 +89,12 @@
                                                     <tbody>
                                                         <!-- Loop untuk setiap jadwal yang ada dalam hari tersebut -->
                                                         @foreach($jadwal as $ch)
-                                                        <tr>
+                                                        <tr style="font-size: 8pt">
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $ch->kelas }}</td>
+                                                            <td>{{ $ch->semester }}</td>
                                                             <td>{{ $ch->pelajaran }}</td>
-                                                            <td>{{ $ch->jam_masuk }} s/d {{ $ch->jam_selesai }}</td>
+                                                            <td>{{ \Carbon\Carbon::parse($ch->jam_masuk)->format('H:i') }} s/d {{ \Carbon\Carbon::parse($ch->jam_selesai)->format('H:i') }}</td>
                                                             <td><a href="#" class="avtar avtar-xs btn-link-secondary"
                                                                     data-bs-toggle="modal"
                                                                     data-bs-target="#deleteJadwal{{ $ch->uuid }}"><i

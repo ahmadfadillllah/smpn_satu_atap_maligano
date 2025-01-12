@@ -1,4 +1,4 @@
-@include('dashboard.layout.head', ['title' => 'Materi Pembelajaran'])
+@include('dashboard.layout.head', ['title' => 'Rating'])
 @include('dashboard.layout.sidebar')
 @include('dashboard.layout.header')
 <section class="pc-container">
@@ -9,13 +9,8 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="page-header-title">
-                            <h2 class="mb-0">Materi Pembelajaran</h2>
+                            <h2 class="mb-0">Rating</h2>
                         </div>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-end">
-                        <a href="{{ route('ppdb.insert') }}" class="btn btn-primary d-inline-flex">
-                            <i data-feather="plus-circle"></i> Tambah Pendaftaran
-                        </a>
                     </div>
                 </div>
             </div>
@@ -30,34 +25,34 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Pengumuman</th>
-                                        <th>Kuota</th>
-                                        <th>Status</th>
+                                        <th>Nama</th>
+                                        <th>Pekerjaan</th>
+                                        <th>Deskripsi</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data['ppdb'] as $ppdb)
+                                    @foreach ($rating as $ra)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ strip_tags($ppdb->pengumuman_pendaftaran) }}</td>
-                                            <td>{{ $ppdb->kuota }}</td>
-                                            <td>{{ $ppdb->status }}</td>
+                                            <td>{{ $ra->nama }}</td>
+                                            <td>{{ $ra->pekerjaan }}</td>
+                                            <td>{{ $ra->deskripsi }}</td>
                                             <td>
-                                                <button type="button" class="btn btn-danger d-inline-flex" data-bs-toggle="modal" data-bs-target="#deletePPDB{{ $ppdb->uuid }}">
+                                                <button type="button" class="btn btn-danger d-inline-flex" data-bs-toggle="modal" data-bs-target="#deleteRating{{ $ra->uuid }}">
                                                     <i class="ti ti-alert-triangle me-1"></i>  Hapus
                                                 </button>
                                             </td>
                                         </tr>
-                                        @include('ppdb.modal.delete')
+                                        @include('rating.modal.delete')
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>#</th>
-                                        <th>Pengumuman</th>
-                                        <th>Kuota</th>
-                                        <th>Status</th>
+                                        <th>Nama</th>
+                                        <th>Pekerjaan</th>
+                                        <th>Deskripsi</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </tfoot>

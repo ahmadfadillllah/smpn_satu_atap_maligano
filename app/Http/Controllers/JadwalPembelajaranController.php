@@ -38,6 +38,7 @@ class JadwalPembelajaranController extends Controller
             'jd.jam_masuk',
             'jd.kelas_id',
             'jd.jam_selesai',
+            'jd.semester',
             'kl.kelas',
             'np.pelajaran',
 
@@ -77,6 +78,7 @@ class JadwalPembelajaranController extends Controller
                 'uuid' => (string) Uuid::uuid4()->toString(),
                 'hari' => $request->hari,
                 'kelas_id' => $request->kelas_id,
+                'semester' => $request->semester,
                 'pelajaran_id' => $request->pelajaran_id,
                 'jam_masuk' => $request->jam_masuk,
                 'jam_selesai' => $request->jam_selesai,

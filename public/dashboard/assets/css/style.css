@@ -34716,14 +34716,14 @@ body.anim-slip-from-top.modal-open .pc-header {
     border-top: 1px solid #e7eaee;
     border-bottom: none;
     white-space: nowrap;
-    padding: .7rem .75rem;
+    padding: .5rem .40rem;
     vertical-align: middle
 }
 
 .datatable-table thead th,
 .table thead th {
     border-bottom: 1px solid #e7eaee;
-    font-size: 13px;
+    font-size: 11px;
     color: #262626;
     background: rgba(248, 249, 250, .5);
     text-transform: uppercase

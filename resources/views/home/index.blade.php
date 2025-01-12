@@ -1,4 +1,4 @@
-@include('home.layout.head')
+@include('home.layout.head', ['title' =>'Home'])
 
 <body>
     <div class="preloader">
@@ -19,10 +19,10 @@
                     </h3>
                     <h1 class="wow fadeInUp" data-wow-duration=".9s" data-wow-delay="1.2s"><span>smpn satu atap 1 maligano</span></h1>
                     <div class="button-group">
-                        <a href="#" class="btn transparent wow fadeInRight" data-wow-duration=".9s"
+                        <a href="{{ route('home.materipembelajaran') }}" class="btn transparent wow fadeInRight" data-wow-duration=".9s"
                             data-wow-delay="2s">materi pembelajaran</a>
-                        <a href="#" class="btn color wow fadeInRight" data-wow-duration=".9s"
-                            data-wow-delay="2.4s">baca selanjutnya</a>
+                        <a href="{{ route('home.contact') }}" class="btn color wow fadeInRight" data-wow-duration=".9s"
+                            data-wow-delay="2.4s">hubungi kami</a>
                     </div>
                 </div>
                 <div class="find-course-form float-right text-left wow fadeInUp" data-wow-duration=".9s"
@@ -110,63 +110,40 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-12 mx-auto">
+
                         <!-- Testimonial Image Slider -->
                         <div class="ti-slider mb-40">
-                            <div class="single-slide">
-                                <div class="image fix"><img src="{{ asset('home') }}/img/testimonial/1.jpg" alt="" />
+                            @foreach ($data['rating'] as $rt)
+                                <div class="single-slide">
+                                    <div class="image fix"><img src="{{ asset('storage') }}/{{ $rt->path }}" alt="" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="image fix"><img src="{{ asset('home') }}/img/testimonial/2.jpg" alt="" />
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="image fix"><img src="{{ asset('home') }}/img/testimonial/3.jpg" alt="" />
-                                </div>
-                            </div>
-                            <div class="single-slide">
-                                <div class="image fix"><img src="{{ asset('home') }}/img/testimonial/4.jpg" alt="" />
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <!-- Testimonial Content Slider -->
                         <div class="tc-slider">
-                            <div class="single-slide">
-                                <p>There are many many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered alteration in some form, by hum domised words which is don't look
-                                    believable.</p>
-                                <h5>momen bhuiyan</h5>
-                                <span>Graphic Designer</span>
-                            </div>
-                            <div class="single-slide">
-                                <p>There are many many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered alteration in some form, by hum domised words which is don't look
-                                    believable.</p>
-                                <h5>Tasnim Akter</h5>
-                                <span>Graphic Designer</span>
-                            </div>
-                            <div class="single-slide">
-                                <p>There are many many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered alteration in some form, by hum domised words which is don't look
-                                    believable.</p>
-                                <h5>momen bhuiyan</h5>
-                                <span>Graphic Designer</span>
-                            </div>
-                            <div class="single-slide">
-                                <p>There are many many variations of passages of Lorem Ipsum available, but the majority
-                                    have suffered alteration in some form, by hum domised words which is don't look
-                                    believable.</p>
-                                <h5>Tasnim Akter</h5>
-                                <span>Graphic Designer</span>
-                            </div>
+                            @foreach ($data['rating'] as $rt)
+                                <div class="single-slide">
+                                    <p>{{ $rt->deskripsi }}</p>
+                                    <h5>{{ $rt->nama }}</h5>
+                                    <span>{{ $rt->pekerjaan }}</span>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ratingInsert">
+                Berikan rating untuk kami
+              </button>
+
+              <!-- Modal -->
+
+
             <!-- Slider Arrows -->
             <button class="ts-arrows ts-prev"><i class="icofont icofont-caret-left"></i></button>
             <button class="ts-arrows ts-next"><i class="icofont icofont-caret-right"></i></button>
         </div>
 
-
+        @include('home.rating')
         @include('home.layout.footer')

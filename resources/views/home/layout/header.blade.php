@@ -24,11 +24,11 @@
                     <nav>
                         <ul>
                             <li class="active"><a href="{{ route('home.profile') }}">profil</a></li>
-                            <li><a href="about.html">ppdb</a></li>
+                            <li><a href="{{ route('home.ppdb') }}">ppdb</a></li>
                             <li><a href="{{ route('home.galeri') }}">galeri</a></li>
-                            <li><a href="about.html">jadwal pembelajaran</a></li>
+                            <li><a href="{{ route('home.jadwalpembelajaran') }}">jadwal pembelajaran</a></li>
                             <li><a href="{{ route('home.materipembelajaran') }}">materi pembelajaran</a></li>
-
+                            <li><a href="{{ route('home.contact') }}" target="">Kontak Kami</a></li>
                             <li><a href="{{ route('login') }}" target="_blank">login</a></li>
                         </ul>
                     </nav>
@@ -38,3 +38,4 @@
         </div>
     </div>
 </div>
+@include('home.notif')

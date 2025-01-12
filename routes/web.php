@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\GuruController;
@@ -11,7 +12,9 @@ use App\Http\Controllers\MateriPembelajaranController;
 use App\Http\Controllers\NamaPelajaranController;
 use App\Http\Controllers\PPDBController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\RatingController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UsulanMateriController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -19,10 +22,16 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name('home.profile');
+Route::post('/usulan-materi', [HomeController::class, 'usulan_materi'])->name('home.usulanMateri');
+Route::post('/rating', [HomeController::class, 'rating'])->name('home.rating');
 
 Route::get('/galeri', [HomeController::class, 'galeri'])->name('home.galeri');
-
+Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
+Route::post('/contact/post', [HomeController::class, 'contact_post'])->name('home.contact.post');
 Route::get('/materipembelajaran', [HomeController::class, 'materipembelajaran'])->name('home.materipembelajaran');
+Route::get('/jadwalpembelajaran', [HomeController::class, 'jadwalpembelajaran'])->name('home.jadwalpembelajaran');
+Route::get('/ppdb', [HomeController::class, 'ppdb'])->name('home.ppdb');
+Route::get('/ppdb/detail/{uuid}', [HomeController::class, 'ppdb_detail'])->name('home.ppdb.detail');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login/post', [AuthController::class, 'login_post'])->name('login.post');
@@ -70,6 +79,18 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/nama-pelajaran/index', [NamaPelajaranController::class, 'index'])->name('namapelajaran.index');
     Route::post('/nama-pelajaran/insert', [NamaPelajaranController::class, 'insert'])->name('namapelajaran.insert');
     Route::get('/nama-pelajaran/delete/{uuid}', [NamaPelajaranController::class, 'delete'])->name('namapelajaran.delete');
+
+    //Usulan Materi
+    Route::get('/usulan-materi/index', [UsulanMateriController::class, 'index'])->name('usulanmateri.index');
+    Route::get('/usulan-materi/delete/{uuid}', [UsulanMateriController::class, 'delete'])->name('usulanmateri.delete');
+
+    //Kontak
+    Route::get('/kontak/index', [ContactController::class, 'index'])->name('kontak.index');
+    Route::get('/kontak/delete/{uuid}', [ContactController::class, 'delete'])->name('kontak.delete');
+
+    //Rating
+    Route::get('/rating/index', [RatingController::class, 'index'])->name('rating.index');
+    Route::get('/rating/delete/{uuid}', [RatingController::class, 'delete'])->name('rating.delete');
 
     //Profil
     Route::get('/profile/index', [ProfilController::class, 'index'])->name('profil.index');

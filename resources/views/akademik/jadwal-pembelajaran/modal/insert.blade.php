@@ -31,6 +31,14 @@
                         </select>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Semester</label>
+                        <select class="form-control" name="semester" required>
+                            <option selected disabled>Pilih semester</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Nama Pelajaran</label>
                         <select class="form-control" name="pelajaran_id" required>
                             <option selected disabled>Pilih pelajaran</option>

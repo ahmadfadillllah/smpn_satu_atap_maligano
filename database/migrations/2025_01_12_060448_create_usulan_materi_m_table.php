@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jadwal_pembelajaran_t', function (Blueprint $table) {
+        Schema::create('usulan_materi_m', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->index();
             $table->boolean('statusenabled')->default(1);
-            $table->string('hari')->nullable();
-            $table->foreignId('kelas_id')->constrained('kelas_m');
-            $table->foreignId('pelajaran_id')->constrained('nama_pelajaran_m');
-            $table->time('jam_masuk')->nullable();
-            $table->time('jam_selesai')->nullable();
-            $table->string('semester')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('no_wa')->nullable();
+            $table->string('materi')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jadwal_pembelajaran_t');
+        Schema::dropIfExists('usulan_materi_m');
     }
 };

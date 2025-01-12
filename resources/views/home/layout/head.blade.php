@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home || {{ config('app.name') }}</title>
+    <title>{{ $title }} || {{ config('app.name') }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -36,4 +36,6 @@
     <!-- Modernizer JS
 	============================================ -->
     <script src="{{ asset('home') }}/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
