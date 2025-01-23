@@ -25,10 +25,10 @@
                             data-wow-delay="2.4s">hubungi kami</a>
                     </div>
                 </div>
-                <div class="find-course-form float-right text-left wow fadeInUp" data-wow-duration=".9s"
+                {{-- <div class="find-course-form float-right text-left wow fadeInUp" data-wow-duration=".9s"
                     data-wow-delay="3s">
                     @include('home.layout.course')
-                </div>
+                </div> --}}
             </div>
         </div>
         <div id="feature-area" class="feature-area bg-gray pt-90 pb-90">
@@ -38,7 +38,7 @@
                     <div class="section-title text-center col-12 mb-45">
                         <h3 class="heading">profil</h3>
                         <div class="excerpt">
-                            <p>UPTD SMP NEGERI SATU ATAP 1 MALIGANO merupakan salah satu sekolah jenjang SMP berstatus Negeri yang berada di wilayah Kec. Maligano, Kab. Muna, Sulawesi Tenggara. UPTD SMP NEGERI SATU ATAP 1 MALIGANO didirikan pada tanggal 1 Januari 1970 dengan Nomor SK Pendirian yang berada dalam naungan Kementerian Pendidikan dan Kebudayaan. Kepala Sekolah UPTD SMP NEGERI SATU ATAP 1 MALIGANO saat ini adalah Mustarim. Operator yang bertanggung jawab adalah Zaiba, S. Pd. , M. Pd. .
+                            <p style="font-family:Arial, Helvetica, sans-serif">UPTD SMP NEGERI SATU ATAP 1 MALIGANO merupakan salah satu sekolah jenjang SMP berstatus Negeri yang berada di wilayah Kec. Maligano, Kab. Muna, Sulawesi Tenggara. UPTD SMP NEGERI SATU ATAP 1 MALIGANO didirikan pada tanggal 1 Januari 1970 dengan Nomor SK Pendirian yang berada dalam naungan Kementerian Pendidikan dan Kebudayaan. Kepala Sekolah UPTD SMP NEGERI SATU ATAP 1 MALIGANO saat ini adalah Mustarim. Operator yang bertanggung jawab adalah Zaiba, S. Pd. , M. Pd. .
 
                                 Dengan adanya keberadaan UPTD SMP NEGERI SATU ATAP 1 MALIGANO, diharapkan dapat memberikan kontribusi dalam mencerdaskan anak bangsa di wilayah Kec. Maligano, Kab. Muna.</p>
                         </div>
@@ -106,7 +106,7 @@
             </div>
         </div>
 
-        <div id="testimonial-area" class="testimonial-area overlay overlay-white overlay-80 text-center pt-90 pb-90">
+        {{-- <div id="testimonial-area" class="testimonial-area overlay overlay-white overlay-80 text-center pt-90 pb-90">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-12 mx-auto">
@@ -143,7 +143,7 @@
             <!-- Slider Arrows -->
             <button class="ts-arrows ts-prev"><i class="icofont icofont-caret-left"></i></button>
             <button class="ts-arrows ts-next"><i class="icofont icofont-caret-right"></i></button>
-        </div>
+        </div> --}}
 
         @include('home.rating')
         @include('home.layout.footer')

@@ -194,7 +194,7 @@ ul{
 .section-title .excerpt p {
   display: block;
   font-size: 18px;
-  font-style: italic;
+  /* font-style: italic; */
   font-weight: 300;
   margin-bottom: 12px;
 }
@@ -207,7 +207,7 @@ ul{
   font-size: 18px;
 }
 /*************************************
- Custom-content all   
+ Custom-content all
 **************************************/
 .boxed-layout.wrapper, .box-layout.wrapper {
   background-color: #fff;
@@ -325,14 +325,14 @@ ul{
   margin: 0 10px;
   border-radius: 50% 50% 50% 50%;
 }
-.object_one {	
+.object_one {
   -webkit-animation: object_one 1.5s infinite;
   animation: object_one 1.5s infinite;
 }
 .object_two {
   -webkit-animation: object_two 1.5s infinite;
   animation: object_two 1.5s infinite;
-  -webkit-animation-delay: 0.25s; 
+  -webkit-animation-delay: 0.25s;
   animation-delay: 0.25s;
 }
 .object_three {
@@ -345,7 +345,7 @@ ul{
 75% { -webkit-transform: scale(0); }
 }
 @keyframes object_one {
-  75% { 
+  75% {
     transform: scale(0);
     -webkit-transform: scale(0);
   }
@@ -354,7 +354,7 @@ ul{
   75% { -webkit-transform: scale(0); }
 }
 @keyframes object_two {
-  75% { 
+  75% {
     transform: scale(0);
     -webkit-transform:  scale(0);
   }
@@ -363,7 +363,7 @@ ul{
   75% { -webkit-transform: scale(0); }
 }
 @keyframes object_three {
-  75% { 
+  75% {
     transform: scale(0);
     -webkit-transform: scale(0);
   }

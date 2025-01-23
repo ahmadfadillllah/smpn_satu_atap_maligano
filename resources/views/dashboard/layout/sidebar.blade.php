@@ -84,7 +84,7 @@
                         <span class="pc-mtext">Profile</span>
                     </a>
                 </li>
-                <li class="pc-item">
+                {{-- <li class="pc-item">
                     <a href="{{ route('usulanmateri.index') }}" class="pc-link">
                         <span class="pc-micon">
                             <img src="{{ asset('dashboard') }}/assets/images/widget/proposal.png" >
@@ -107,7 +107,7 @@
                         </span>
                         <span class="pc-mtext">Rating</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="pc-item pc-caption"><label>Configuration</label></li>
                 @if (Auth::user()->role == 'Operator')
                     <li class="pc-item">
