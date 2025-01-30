@@ -35,7 +35,7 @@
             <div class="container">
                 <!-- Section Title -->
                 <div class="row">
-                    <div class="section-title text-center col-12 mb-45">
+                    <div class="section-title text-justify col-12 mb-45">
                         <h3 class="heading">profil</h3>
                         <div class="excerpt">
                             <p style="font-family:Arial, Helvetica, sans-serif">UPTD SMP NEGERI SATU ATAP 1 MALIGANO merupakan salah satu sekolah jenjang SMP berstatus Negeri yang berada di wilayah Kec. Maligano, Kab. Muna, Sulawesi Tenggara. UPTD SMP NEGERI SATU ATAP 1 MALIGANO didirikan pada tanggal 1 Januari 1970 dengan Nomor SK Pendirian yang berada dalam naungan Kementerian Pendidikan dan Kebudayaan. Kepala Sekolah UPTD SMP NEGERI SATU ATAP 1 MALIGANO saat ini adalah Mustarim. Operator yang bertanggung jawab adalah Zaiba, S. Pd. , M. Pd. .
@@ -45,8 +45,44 @@
                         <i class="icofont icofont-traffic-light"></i>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="single-facts text-center col-md-3 col-sm-6 col-12 mb-30">
+                            <h5 >NSPN</h5>
+                            <p>{{ $data['profil']->nspn }}</p>
+                        </div>
+                        <div class="single-facts text-center col-md-3 col-sm-6 col-12 mb-30">
+                            <h5 >SK Pendirian</h5>
+                            <p>{{ $data['profil']->sk_pendirian }}</p>
+                        </div>
+                        <div class="single-facts text-center col-md-3 col-sm-6 col-12 mb-30">
+                            <h5 >SK Izin Operasional</h5>
+                            <p>{{ $data['profil']->sk_izin }}</p>
+                        </div>
+                        <div class="single-facts text-center col-md-3 col-sm-6 col-12 mb-30">
+                            <h5 >Bentuk Pendidikan</h5>
+                            <p>{{ $data['profil']->bentuk_pendidikan }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="single-facts text-center col-md-3 col-sm-6 col-12 mb-30">
+                            <h5 >Tanggal SK Pendirian</h5>
+                            <p>{{ $data['profil']->tanggal_sk_pendirian }}</p>
+                        </div>
+                        <div class="single-facts text-center col-md-3 col-sm-6 col-12 mb-30">
+                            <h5 >Tanggal SK Izin Operasional</h5>
+                            <p>{{ $data['profil']->tanggal_sk_izin }}</p>
+                        </div>
+                        <div class="single-facts text-center col-md-3 col-sm-6 col-12 mb-30">
+                            <h5 >Status Kepemilikan</h5>
+                            <p>{{ $data['profil']->status_kepemilikan }}</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="section-title text-center col-12 mb-45">
+                    <div class="section-title text-justify col-12 mb-45">
                         <div class="excerpt">
                             {!! $data['profil']->profile !!}
                         </div>
@@ -85,7 +121,7 @@
             <div class="container">
                 <!-- Section Title -->
                 <div class="row">
-                    <div class="section-title text-center col-12 mb-45">
+                    <div class="section-title text-justify col-12 mb-45">
                         <h3 class="heading">Visi</h3>
                         <div class="excerpt">
                             {!! $data['profil']->visi !!}

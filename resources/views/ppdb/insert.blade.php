@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-6">
+                {{-- <div class="col-sm-6 col-lg-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="col-md-12 mb-3">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-sm-12">
                     <button type="submit" class="btn btn-primary d-inline-flex" >Submit</button>
                 </div>

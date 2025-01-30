@@ -29,27 +29,27 @@ class PPDBController extends Controller
     public function post(Request $request)
     {
         // dd($request->all());
-        $request->validate([
-            'gambar' => 'required|image|max:10240', // Maksimal 10MB
-        ]);
+        // $request->validate([
+        //     'gambar' => 'required|image|max:10240', // Maksimal 10MB
+        // ]);
         try {
-            $fileRecord = null;
-            if ($request->hasFile('gambar')) {
-                $file = $request->file('gambar');
+            // $fileRecord = null;
+            // if ($request->hasFile('gambar')) {
+            //     $file = $request->file('gambar');
 
-                // Menyimpan file ke storage dan mendapatkan path
-                $path = $file->store('gambar', 'public');
+            //     // Menyimpan file ke storage dan mendapatkan path
+            //     $path = $file->store('gambar', 'public');
 
-                // Menyimpan informasi file ke tabel 'files'
-                $fileRecord = new File();
-                $fileRecord->uuid = (string) Uuid::uuid4()->toString();
-                $fileRecord->name = $file->getClientOriginalName();
-                $fileRecord->path = $path;
-                $fileRecord->mime_type = $file->getMimeType();
-                $fileRecord->size = $file->getSize();
-                $fileRecord->format = $file->getClientOriginalExtension();
-                $fileRecord->save();  // Simpan file terlebih dahulu untuk mendapatkan ID-nya
-            }
+            //     // Menyimpan informasi file ke tabel 'files'
+            //     $fileRecord = new File();
+            //     $fileRecord->uuid = (string) Uuid::uuid4()->toString();
+            //     $fileRecord->name = $file->getClientOriginalName();
+            //     $fileRecord->path = $path;
+            //     $fileRecord->mime_type = $file->getMimeType();
+            //     $fileRecord->size = $file->getSize();
+            //     $fileRecord->format = $file->getClientOriginalExtension();
+            //     $fileRecord->save();  // Simpan file terlebih dahulu untuk mendapatkan ID-nya
+            // }
 
             // dd($fileRecord);
 
@@ -60,7 +60,7 @@ class PPDBController extends Controller
                 'syarat_pendaftaran' => $request->syarat_pendaftaran,
                 'kuota' => $request->kuota,
                 'status' => $request->status,
-                'file_id' => $fileRecord->id,
+                // 'file_id' => $fileRecord->id,
             ]);
 
 
