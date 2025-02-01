@@ -43,13 +43,12 @@ class MateriPembelajaranController extends Controller
     public function insert(Request $request)
     {
         // dd($request->all());
-        // $request->validate([
-        //     'files' => 'required|file|max:10240', // Maksimal 10MB
-        // ]);
+        $request->validate([
+            'files' => 'required|file|max:10240', // Maksimal 10MB
+        ]);
         try {
             $fileRecord = null;
-            if ($request->hasFile('files')) {
-                $file = $request->file('files');
+            $file = $request->file('files');
 
                 // Menyimpan file ke storage dan mendapatkan path
                 $path = $file->store('files', 'public');
@@ -60,12 +59,11 @@ class MateriPembelajaranController extends Controller
                 $fileRecord->name = $file->getClientOriginalName();
                 $fileRecord->path = $path;
                 $fileRecord->mime_type = $file->getMimeType();
-                // $fileRecord->size = $file->getSize();
-                // $fileRecord->format = $file->getClientOriginalExtension();
-                $fileRecord->save();  // Simpan file terlebih dahulu untuk mendapatkan ID-nya
-            }
+                $fileRecord->size = $file->getSize();
+                $fileRecord->format = $file->getClientOriginalExtension();
+                $fileRecord->save();
 
-            dd($fileRecord);
+                dd($fileRecord);
 
             // Menyimpan data MateriPembelajaran setelah file berhasil disimpan
             MateriPembelajaran::create([
@@ -81,7 +79,6 @@ class MateriPembelajaranController extends Controller
             return redirect()->back()->with('success','Materi pembelajaran berhasil ditambahkan');
 
         } catch (\Throwable $th) {
-            // dd($th);
             return redirect()->back()->with('info','Materi pembelajaran gagal ditambahkan'. $th->getMessage());
         }
 
