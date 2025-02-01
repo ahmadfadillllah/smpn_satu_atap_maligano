@@ -1,4 +1,4 @@
-@include('dashboard.layout.head', ['title' => 'Materi Pembelajaran'])
+@include('dashboard.layout.head', ['title' => 'Kekatifan Guru'])
 @include('dashboard.layout.sidebar')
 @include('dashboard.layout.header')
 <section class="pc-container">
@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="page-header-title">
-                            <h2 class="mb-0">Materi Pembelajaran</h2>
+                            <h2 class="mb-0">Kekatifan Guru</h2>
                         </div>
                     </div>
                 </div>
