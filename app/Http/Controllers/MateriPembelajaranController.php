@@ -42,7 +42,7 @@ class MateriPembelajaranController extends Controller
 
     public function insert(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         // $request->validate([
         //     'files' => 'required|file|max:10240', // Maksimal 10MB
         // ]);
@@ -60,12 +60,12 @@ class MateriPembelajaranController extends Controller
                 $fileRecord->name = $file->getClientOriginalName();
                 $fileRecord->path = $path;
                 $fileRecord->mime_type = $file->getMimeType();
-                $fileRecord->size = $file->getSize();
-                $fileRecord->format = $file->getClientOriginalExtension();
+                // $fileRecord->size = $file->getSize();
+                // $fileRecord->format = $file->getClientOriginalExtension();
                 $fileRecord->save();  // Simpan file terlebih dahulu untuk mendapatkan ID-nya
             }
 
-            dd($fileRecord);
+            // dd($fileRecord);
 
             // Menyimpan data MateriPembelajaran setelah file berhasil disimpan
             MateriPembelajaran::create([
