@@ -72,7 +72,7 @@ class MateriPembelajaranController extends Controller
                 'kelas_id' => $request->kelas_id,
                 'penerbit' => $request->penerbit,
                 'tahun_terbit' => $request->tahun_terbit,
-                'file_id' => $fileRecord->id,
+                'file_id' => $fileRecord ? $fileRecord->id : null,
             ]);
 
 
