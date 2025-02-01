@@ -42,7 +42,7 @@ class MateriPembelajaranController extends Controller
 
     public function insert(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
         // $request->validate([
         //     'files' => 'required|file|max:10240', // Maksimal 10MB
         // ]);
