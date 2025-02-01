@@ -69,6 +69,14 @@
                     </a>
                 </li>
                 <li class="pc-item">
+                    <a href="{{ route('keaktifan.index') }}" class="pc-link">
+                        <span class="pc-micon">
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/teacher.png" >
+                        </span>
+                        <span class="pc-mtext">Keaktifan Guru</span>
+                    </a>
+                </li>
+                <li class="pc-item">
                     <a href="{{ route('galeri.index') }}" class="pc-link">
                         <span class="pc-micon">
                             <img src="{{ asset('dashboard') }}/assets/images/widget/image-galery.png" >

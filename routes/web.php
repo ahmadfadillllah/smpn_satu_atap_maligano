@@ -7,6 +7,7 @@ use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JadwalPembelajaranController;
+use App\Http\Controllers\KeaktifanController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MateriPembelajaranController;
 use App\Http\Controllers\NamaPelajaranController;
@@ -69,6 +70,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/ppdb/insert', [PPDBController::class, 'insert'])->name('ppdb.insert');
     Route::get('/ppdb/delete/{uuid}', [PPDBController::class, 'delete'])->name('ppdb.delete');
     Route::post('/ppdb/post', [PPDBController::class, 'post'])->name('ppdb.post');
+
+    //Keaktifan Guru
+    Route::get('/active-teacher/index', [KeaktifanController::class, 'index'])->name('keaktifan.index');
 
     //Galeri
     Route::get('/galeri/index', [GaleriController::class, 'index'])->name('galeri.index');

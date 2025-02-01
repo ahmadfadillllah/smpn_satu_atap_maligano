@@ -5,7 +5,7 @@
             <div class="header-top-wrapper row">
                 <div class="header-top-left text-left col-md-6 col-12">
                     <p><i class="icofont icofont-envelope"></i><span>smpnsatap1maligano@gmail.com</span></p>
-                    <p><i class="icofont icofont-ui-call"></i><span>+021-5725610</span></p>
+                    {{-- <p><i class="icofont icofont-ui-call"></i><span>+021-5725610</span></p> --}}
                 </div>
                 <div class="header-top-right text-right col-md-6 col-12">
                     <p id="clock"><i class="icofont icofont-clock-time"></i><span></span></p>
