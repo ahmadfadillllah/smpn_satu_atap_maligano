@@ -65,7 +65,7 @@ class MateriPembelajaranController extends Controller
                 $fileRecord->save();  // Simpan file terlebih dahulu untuk mendapatkan ID-nya
             }
 
-            // dd($fileRecord);
+            dd($fileRecord);
 
             // Menyimpan data MateriPembelajaran setelah file berhasil disimpan
             MateriPembelajaran::create([
