@@ -43,9 +43,9 @@ class MateriPembelajaranController extends Controller
     public function insert(Request $request)
     {
         // dd($request->all());
-        $request->validate([
-            'files' => 'required|file|max:10240', // Maksimal 10MB
-        ]);
+        // $request->validate([
+        //     'files' => 'required|file|max:10240', // Maksimal 10MB
+        // ]);
         try {
             $fileRecord = null;
             if ($request->hasFile('files')) {
@@ -79,7 +79,7 @@ class MateriPembelajaranController extends Controller
             return redirect()->back()->with('success','Materi pembelajaran berhasil ditambahkan');
 
         } catch (\Throwable $th) {
-            dd($th);
+            // dd($th);
             return redirect()->back()->with('info','Materi pembelajaran gagal ditambahkan'. $th->getMessage());
         }
 
