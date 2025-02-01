@@ -79,6 +79,7 @@ class MateriPembelajaranController extends Controller
             return redirect()->back()->with('success','Materi pembelajaran berhasil ditambahkan');
 
         } catch (\Throwable $th) {
+            dd($th);
             return redirect()->back()->with('info','Materi pembelajaran gagal ditambahkan'. $th->getMessage());
         }
 
