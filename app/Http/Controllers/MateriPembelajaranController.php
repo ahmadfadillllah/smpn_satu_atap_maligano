@@ -65,6 +65,8 @@ class MateriPembelajaranController extends Controller
                 $fileRecord->save();  // Simpan file terlebih dahulu untuk mendapatkan ID-nya
             }
 
+            dd($fileRecord);
+
             // Menyimpan data MateriPembelajaran setelah file berhasil disimpan
             MateriPembelajaran::create([
                 'uuid' => (string) Uuid::uuid4()->toString(),
@@ -72,7 +74,7 @@ class MateriPembelajaranController extends Controller
                 'kelas_id' => $request->kelas_id,
                 'penerbit' => $request->penerbit,
                 'tahun_terbit' => $request->tahun_terbit,
-                'file_id' => $fileRecord ? $fileRecord->id : null,
+                'file_id' => $fileRecord->id,
             ]);
 
 
