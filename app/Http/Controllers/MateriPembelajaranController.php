@@ -48,7 +48,8 @@ class MateriPembelajaranController extends Controller
         ]);
         try {
             $fileRecord = null;
-            $file = $request->file('files');
+            if ($request->hasFile('files')) {
+                $file = $request->file('files');
 
                 // Menyimpan file ke storage dan mendapatkan path
                 $path = $file->store('files', 'public');
@@ -61,9 +62,8 @@ class MateriPembelajaranController extends Controller
                 $fileRecord->mime_type = $file->getMimeType();
                 $fileRecord->size = $file->getSize();
                 $fileRecord->format = $file->getClientOriginalExtension();
-                $fileRecord->save();
-
-                dd($fileRecord);
+                $fileRecord->save();  // Simpan file terlebih dahulu untuk mendapatkan ID-nya
+            }
 
             // Menyimpan data MateriPembelajaran setelah file berhasil disimpan
             MateriPembelajaran::create([
