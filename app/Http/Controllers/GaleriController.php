@@ -63,6 +63,24 @@ class GaleriController extends Controller
 
     }
 
+    public function update($uuid, Request $request)
+    {
+        try {
+            Galeri::where('uuid', $uuid) ->update(
+                [
+                    'judul' => $request->judul,
+                    'kategori' => $request->kategori,
+                    'keterangan' => $request->keterangan,
+                ]
+            );
+
+            return redirect()->back()->with('success','Galeri berhasil diupdate');
+
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('info','Galeri gagal diupdate');
+        }
+    }
+
     public function delete($uuid)
     {
         try {

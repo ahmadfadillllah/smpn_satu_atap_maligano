@@ -37,7 +37,7 @@
                                                             <h6 class="mb-1">{{ $gl->judul }}</h6>
                                                         </div>
                                                         <div class="flex-shrink-0">
-                                                            {{-- <a href="#" class="avtar avtar-xs btn-link-secondary"><i class="material-icons-two-tone">edit</i></a> --}}
+                                                            <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#editGaleri{{ $gl->uuid }}"><i class="material-icons-two-tone">edit</i></a>
                                                             <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#deleteGaleri{{ $gl->uuid }}"><i class="material-icons-two-tone">delete_outline</i></a>
                                                         </div>
                                                     </div>
@@ -59,6 +59,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @include('galeri.modal.edit')
                                 @include('galeri.modal.delete')
                             @endforeach
                         </div>

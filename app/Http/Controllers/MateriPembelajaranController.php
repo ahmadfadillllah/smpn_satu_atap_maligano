@@ -19,6 +19,7 @@ class MateriPembelajaranController extends Controller
         ->leftJoin('file_t as fl', 'mt.file_id', 'fl.id')
         ->select(
             'mt.uuid',
+            'kls.id as kls_id',
             'mt.judul',
             'kls.kelas as kelas',
             'mt.statusenabled',
@@ -87,6 +88,26 @@ class MateriPembelajaranController extends Controller
             return redirect()->back()->with('info','Materi pembelajaran gagal ditambahkan'. $th->getMessage());
         }
 
+    }
+
+    public function update(Request $request, $uuid)
+    {
+        try {
+            MateriPembelajaran::where('uuid', $uuid) ->update(
+                [
+                    'judul' => $request->judul,
+                    'kelas_id' => $request->kelas_id,
+                    'penerbit' => $request->penerbit,
+                    'tahun_terbit' => $request->tahun_terbit,
+                    'tahun_terbit' => $request->tahun_terbit,
+                ]
+            );
+
+            return redirect()->back()->with('success','Materi Pelajaran berhasil diupdate');
+
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('info','Materi Pelajaran gagal diupdate');
+        }
     }
 
     public function delete($uuid)

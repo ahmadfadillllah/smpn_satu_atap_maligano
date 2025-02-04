@@ -31,8 +31,8 @@
     @include('notification.sweetalert')
     <div class="auth-main">
         <div class="auth-wrapper v2">
-            <div class="auth-sidecontent"><img src="{{ asset('dashboard') }}/assets/images/authentication/img-auth-sideimg.jpg" alt="images"
-                    class="img-fluid img-auth-side"></div>
+            {{-- <div class="auth-sidecontent"><img src="{{ asset('dashboard') }}/assets/images/authentication/img-auth-sideimg.jpg" alt="images"
+                    class="img-fluid img-auth-side"></div> --}}
             <div class="auth-form">
                 <div class="card my-5">
                     <div class="card-body">

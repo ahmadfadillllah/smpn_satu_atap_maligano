@@ -30,6 +30,23 @@ class NamaPelajaranController extends Controller
         }
     }
 
+    public function update(Request $request, $uuid)
+    {
+        try {
+            NamaPelajaran::where('uuid', $uuid) ->update(
+                [
+                    // 'kelas' => $request->kelas,
+                    'pelajaran' => $request->pelajaran,
+                ]
+            );
+
+            return redirect()->back()->with('success','Nama Pelajaran berhasil diupdate');
+
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('info','Nama Pelajaran gagal diupdate');
+        }
+    }
+
     public function delete($uuid)
     {
         try {

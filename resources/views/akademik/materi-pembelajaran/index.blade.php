@@ -64,11 +64,13 @@
                                                 </a>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-danger d-inline-flex" data-bs-toggle="modal" data-bs-target="#deleteMateri{{ $mt->uuid }}">
-                                                    <i class="ti ti-alert-triangle me-1"></i>  Hapus
-                                                </button>
+                                                @if (Auth::user()->role == 'Operator')
+                                                <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#editMateri{{ $mt->uuid }}"><i class="ti ti-edit f-20"></i> </a>
+                                                @endif
+                                                <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#deleteMateri{{ $mt->uuid }}"><i class="ti ti-trash f-20"></i></a>
                                             </td>
                                         </tr>
+                                        @include('akademik.materi-pembelajaran.modal.edit')
                                         @include('akademik.materi-pembelajaran.modal.delete')
                                     @endforeach
                                 </tbody>

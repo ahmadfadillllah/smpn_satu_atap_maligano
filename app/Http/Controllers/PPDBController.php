@@ -26,6 +26,57 @@ class PPDBController extends Controller
         return view('ppdb.insert');
     }
 
+    public function edit($uuid)
+    {
+        $ppdb = PPDB::where('statusenabled', true)->where('uuid', $uuid)->first();
+        return view('ppdb.edit', compact('ppdb'));
+    }
+
+    public function update(Request $request, $uuid)
+    {
+        // dd($request->all());
+        // $request->validate([
+        //     'gambar' => 'required|image|max:10240', // Maksimal 10MB
+        // ]);
+        try {
+            // $fileRecord = null;
+            // if ($request->hasFile('gambar')) {
+            //     $file = $request->file('gambar');
+
+            //     // Menyimpan file ke storage dan mendapatkan path
+            //     $path = $file->store('gambar', 'public');
+
+            //     // Menyimpan informasi file ke tabel 'files'
+            //     $fileRecord = new File();
+            //     $fileRecord->uuid = (string) Uuid::uuid4()->toString();
+            //     $fileRecord->name = $file->getClientOriginalName();
+            //     $fileRecord->path = $path;
+            //     $fileRecord->mime_type = $file->getMimeType();
+            //     $fileRecord->size = $file->getSize();
+            //     $fileRecord->format = $file->getClientOriginalExtension();
+            //     $fileRecord->save();  // Simpan file terlebih dahulu untuk mendapatkan ID-nya
+            // }
+
+            // dd($fileRecord);
+
+            PPDB::where('uuid', $uuid) ->update(
+                [
+                    'pengumuman_pendaftaran' => $request->pengumuman_pendaftaran,
+                    'syarat_pendaftaran' => $request->syarat_pendaftaran,
+                    'kuota' => $request->kuota,
+                    'status' => $request->status,
+                ]
+            );
+
+
+            return redirect()->route('ppdb.index')->with('success','PPDB berhasil diupdate');
+
+        } catch (\Throwable $th) {
+            return redirect()->route('ppdb.index')->with('info','PPDB gagal diupdate'. $th->getMessage());
+        }
+
+    }
+
     public function post(Request $request)
     {
         // dd($request->all());

@@ -37,6 +37,7 @@ class JadwalPembelajaranController extends Controller
             'jd.uuid',
             'jd.jam_masuk',
             'jd.kelas_id',
+            'jd.pelajaran_id',
             'jd.jam_selesai',
             'jd.semester',
             'kl.kelas',
@@ -99,6 +100,27 @@ class JadwalPembelajaranController extends Controller
 
         } catch (\Throwable $th) {
             return redirect()->back()->with('info','Jadwal pembelajaran gagal ditambahkan');
+        }
+    }
+
+    public function update($uuid, Request $request)
+    {
+        try {
+            JadwalPembelajaran::where('uuid', $uuid) ->update(
+                [
+                    'hari' => $request->hari,
+                    'kelas_id' => $request->kelas_id,
+                    'semester' => $request->semester,
+                    'pelajaran_id' => $request->pelajaran_id,
+                    'jam_masuk' => $request->jam_masuk,
+                    'jam_selesai' => $request->jam_selesai,
+                ]
+            );
+
+            return redirect()->back()->with('success','Jadwal pembelajaran berhasil diupdate');
+
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('info','Jadwal pembelajaran gagal diupdate');
         }
     }
 

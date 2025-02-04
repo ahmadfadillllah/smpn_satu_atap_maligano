@@ -51,7 +51,9 @@
                                                 <td class="text-secondary"><i class="fas fa-circle f-10 m-r-10"></i> Non Aktif</td>
                                             @endif
                                             <td>
+                                                @if (Auth::user()->role == 'Operator')
                                                 <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#editGuru{{ $gr->uuid }}"><i class="ti ti-edit f-20"></i> </a>
+                                                @endif
                                                 <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#deleteGuru{{ $gr->uuid }}"><i class="ti ti-trash f-20"></i></a>
                                             </td>
                                         </tr>

@@ -33,9 +33,13 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $pr->pelajaran }}</td>
                                             <td>
+                                                @if (Auth::user()->role == 'Operator')
+                                                <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#editPelajaran{{ $pr->uuid }}"><i class="ti ti-edit f-20"></i> </a>
+                                                @endif
                                                 <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#deletePelajaran{{ $pr->uuid }}"><i class="ti ti-trash f-20"></i></a>
                                             </td>
                                         </tr>
+                                        @include('nama-pelajaran.modal.edit')
                                         @include('nama-pelajaran.modal.delete')
                                     @endforeach
 

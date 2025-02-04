@@ -59,17 +59,21 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/jadwal-pembelajaran/index', [JadwalPembelajaranController::class, 'index'])->name('jadwalpembelajaran.index');
     Route::post('/jadwal-pembelajaran/insert', [JadwalPembelajaranController::class, 'insert'])->name('jadwalpembelajaran.insert');
     Route::get('/jadwal-pembelajaran/delete/{uuid}', [JadwalPembelajaranController::class, 'delete'])->name('jadwalpembelajaran.delete');
+    Route::post('/jadwal-pembelajaran/update/{uuid}', [JadwalPembelajaranController::class, 'update'])->name('jadwalpembelajaran.update');
 
     //Materi Pembelajaran
     Route::get('/materi-pembelajaran/index', [MateriPembelajaranController::class, 'index'])->name('materipembelajaran.index');
     Route::post('/materi-pembelajaran/insert', [MateriPembelajaranController::class, 'insert'])->name('materipembelajaran.insert');
     Route::get('/materi-pembelajaran/delete/{uuid}', [MateriPembelajaranController::class, 'delete'])->name('materipembelajaran.delete');
+    Route::post('/materi-pembelajaran/update/{uuid}', [MateriPembelajaranController::class, 'update'])->name('materipembelajaran.update');
 
     //PPDB
     Route::get('/ppdb/index', [PPDBController::class, 'index'])->name('ppdb.index');
     Route::get('/ppdb/insert', [PPDBController::class, 'insert'])->name('ppdb.insert');
     Route::get('/ppdb/delete/{uuid}', [PPDBController::class, 'delete'])->name('ppdb.delete');
     Route::post('/ppdb/post', [PPDBController::class, 'post'])->name('ppdb.post');
+    Route::get('/ppdb/edit/{uuid}', [PPDBController::class, 'edit'])->name('ppdb.edit');
+    Route::post('/ppdb/update/{uuid}', [PPDBController::class, 'update'])->name('ppdb.update');
 
     //Keaktifan Guru
     Route::get('/active-teacher/index', [KeaktifanController::class, 'index'])->name('keaktifan.index');
@@ -78,11 +82,13 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/galeri/index', [GaleriController::class, 'index'])->name('galeri.index');
     Route::post('/galeri/insert', [GaleriController::class, 'insert'])->name('galeri.insert');
     Route::get('/galeri/delete/{uuid}', [GaleriController::class, 'delete'])->name('galeri.delete');
+    Route::post('/galeri/update/{uuid}', [GaleriController::class, 'update'])->name('galeri.update');
 
     //Nama Pelajaran
     Route::get('/nama-pelajaran/index', [NamaPelajaranController::class, 'index'])->name('namapelajaran.index');
     Route::post('/nama-pelajaran/insert', [NamaPelajaranController::class, 'insert'])->name('namapelajaran.insert');
     Route::get('/nama-pelajaran/delete/{uuid}', [NamaPelajaranController::class, 'delete'])->name('namapelajaran.delete');
+    Route::post('/nama-pelajaran/update/{uuid}', [NamaPelajaranController::class, 'update'])->name('namapelajaran.update');
 
     //Usulan Materi
     Route::get('/usulan-materi/index', [UsulanMateriController::class, 'index'])->name('usulanmateri.index');

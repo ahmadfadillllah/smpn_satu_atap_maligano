@@ -95,12 +95,17 @@
                                                             <td>{{ $ch->semester }}</td>
                                                             <td>{{ $ch->pelajaran }}</td>
                                                             <td>{{ \Carbon\Carbon::parse($ch->jam_masuk)->format('H:i') }} s/d {{ \Carbon\Carbon::parse($ch->jam_selesai)->format('H:i') }}</td>
-                                                            <td><a href="#" class="avtar avtar-xs btn-link-secondary"
+                                                            <td>
+                                                                @if (Auth::user()->role == 'Operator')
+                                                                <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#editJadwal{{ $ch->uuid }}"><i class="material-icons-two-tone">edit</i></a>
+                                                                @endif
+                                                                <a href="#" class="avtar avtar-xs btn-link-secondary"
                                                                     data-bs-toggle="modal"
                                                                     data-bs-target="#deleteJadwal{{ $ch->uuid }}"><i
                                                                         class="material-icons-two-tone">delete_outline</i></a>
                                                             </td>
                                                         </tr>
+                                                        @include('akademik.jadwal-pembelajaran.modal.edit')
                                                         @include('akademik.jadwal-pembelajaran.modal.delete')
                                                         @endforeach
                                                     </tbody>

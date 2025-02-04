@@ -43,7 +43,9 @@
                                             <td>{{ $kl->kelas }}</td>
                                             <td>{{ $kl->guru }}</td>
                                             <td>
+                                                @if (Auth::user()->role == 'Operator')
                                                 <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#editKelas{{ $kl->uuid }}"><i class="ti ti-edit f-20"></i> </a>
+                                                @endif
                                                 <a href="#" class="avtar avtar-xs btn-link-secondary" data-bs-toggle="modal" data-bs-target="#deleteKelas{{ $kl->uuid }}"><i class="ti ti-trash f-20"></i></a>
                                             </td>
                                         </tr>
