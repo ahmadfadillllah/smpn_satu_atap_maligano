@@ -16,3 +16,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
+@if ($errors->has('files'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ $errors->first('files') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif

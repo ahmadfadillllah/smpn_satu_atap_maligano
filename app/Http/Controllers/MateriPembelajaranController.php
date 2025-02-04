@@ -45,7 +45,12 @@ class MateriPembelajaranController extends Controller
         // dd($request->all());
         $request->validate([
             'files' => 'required|file|max:10240', // Maksimal 10MB
+        ], [
+            'files.required' => 'File harus diunggah.',
+            'files.file' => 'File yang diunggah harus berupa file yang valid.',
+            'files.max' => 'Ukuran file maksimal adalah 10MB.',
         ]);
+
         try {
             $fileRecord = null;
             if ($request->hasFile('files')) {

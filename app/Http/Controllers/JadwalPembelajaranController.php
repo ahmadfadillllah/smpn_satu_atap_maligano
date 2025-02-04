@@ -71,20 +71,31 @@ class JadwalPembelajaranController extends Controller
 
     public function insert(Request $request)
     {
+        $jadwal = JadwalPembelajaran::where('hari', $request->hari)
+        ->where('hari', $request->hari)
+        ->where('kelas_id', $request->kelas_id)
+        ->where('semester', $request->semester)
+        ->where('pelajaran_id', $request->pelajaran_id)
+        ->where('statusenabled', true)->first();
 
         // dd($request->all());
         try {
-            JadwalPembelajaran::create([
-                'uuid' => (string) Uuid::uuid4()->toString(),
-                'hari' => $request->hari,
-                'kelas_id' => $request->kelas_id,
-                'semester' => $request->semester,
-                'pelajaran_id' => $request->pelajaran_id,
-                'jam_masuk' => $request->jam_masuk,
-                'jam_selesai' => $request->jam_selesai,
-            ]);
+            if(empty($jadwal)){
+                JadwalPembelajaran::create([
+                    'uuid' => (string) Uuid::uuid4()->toString(),
+                    'hari' => $request->hari,
+                    'kelas_id' => $request->kelas_id,
+                    'semester' => $request->semester,
+                    'pelajaran_id' => $request->pelajaran_id,
+                    'jam_masuk' => $request->jam_masuk,
+                    'jam_selesai' => $request->jam_selesai,
+                ]);
 
-            return redirect()->back()->with('success','Jadwal pembelajaran berhasil ditambahkan');
+                return redirect()->back()->with('success','Jadwal pembelajaran berhasil ditambahkan');
+            }else{
+                return redirect()->back()->with('info','Jadwal sudah ada, mohon inputkan jadwal lain');
+            }
+
 
         } catch (\Throwable $th) {
             return redirect()->back()->with('info','Jadwal pembelajaran gagal ditambahkan');

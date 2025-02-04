@@ -21,6 +21,7 @@
                 </div>
             </div>
         </div>
+        @include('notification.alert')
         <div class="row">
             <!-- DOM/Jquery table start -->
             <div class="col-sm-12">
