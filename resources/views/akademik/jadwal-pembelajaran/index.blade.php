@@ -60,7 +60,7 @@
                         <div class="row">
                             <!-- Loop untuk setiap kelompok hari -->
                             @foreach($data['pelajaran'] as $hari => $jadwal)
-                            <div class="col-sm-6 col-lg-4 col-xxl-4">
+                            <div class="col-sm-6 col-lg-6 col-xxl-6">
                                 <div class="card border">
                                     <div class="card-body p-2">
                                         <ul class="list-group list-group-flush my-2">
@@ -81,6 +81,7 @@
                                                             <th>No</th>
                                                             <th>Kelas</th>
                                                             <th>Semester</th>
+                                                            <th>Guru</th>
                                                             <th>Pelajaran</th>
                                                             <th>Jam</th>
                                                             <th>Aksi</th>
@@ -93,6 +94,7 @@
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $ch->kelas }}</td>
                                                             <td>{{ $ch->semester }}</td>
+                                                            <td>{{ $ch->guru }}</td>
                                                             <td>{{ $ch->pelajaran }}</td>
                                                             <td>{{ \Carbon\Carbon::parse($ch->jam_masuk)->format('H:i') }} s/d {{ \Carbon\Carbon::parse($ch->jam_selesai)->format('H:i') }}</td>
                                                             <td>

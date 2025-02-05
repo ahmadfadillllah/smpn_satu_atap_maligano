@@ -30,11 +30,13 @@ class JadwalPembelajaranController extends Controller
 
         $pelajaran = DB::table('jadwal_pembelajaran_t as jd')
         ->leftJoin('kelas_m as kl', 'jd.kelas_id', 'kl.id')
+        ->leftJoin('guru_m as gr', 'kl.guru_id', 'gr.id')
         ->leftJoin('nama_pelajaran_m as np', 'jd.pelajaran_id', 'np.id')
         ->select(
             'jd.hari',
             'jd.statusenabled',
             'jd.uuid',
+            'gr.guru',
             'jd.jam_masuk',
             'jd.kelas_id',
             'jd.pelajaran_id',
