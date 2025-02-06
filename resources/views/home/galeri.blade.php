@@ -16,10 +16,10 @@
             <div class="container">
                 <div class="row">
                     <div class="page-banner text-center col-12">
-                        <h1>Gallery</h1>
+                        <h1>Galeri</h1>
                         <ul>
                             <li><a href="#">home</a></li>
-                            <li><span>gallery</span></li>
+                            <li><span>Galeri</span></li>
                         </ul>
                     </div>
                 </div>

@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('guru_m', function (Blueprint $table) {
+        Schema::create('absensi_t', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->index();
             $table->boolean('statusenabled')->default(1);
-            $table->string('nip')->nullable();
-            $table->string('guru')->nullable();
-            $table->string('jabatan')->nullable();
+            $table->foreignId('guru_id')->constrained('guru_m');
+            $table->date('date')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('guru_m');
+        Schema::dropIfExists('absensi_t');
     }
 };

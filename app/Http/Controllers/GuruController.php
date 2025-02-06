@@ -19,6 +19,7 @@ class GuruController extends Controller
         try {
             Guru::create([
                 'uuid' => (string) Uuid::uuid4()->toString(),
+                'nip' => $request->nip,
                 'guru' => $request->guru,
                 'jabatan' => $request->jabatan,
             ]);
@@ -27,6 +28,24 @@ class GuruController extends Controller
 
         } catch (\Throwable $th) {
             return redirect()->back()->with('info','Guru gagal ditambahkan');
+        }
+    }
+
+    public function update($uuid, Request $request)
+    {
+        try {
+            Guru::where('uuid', $uuid) ->update(
+                [
+                    'nip' => $request->nip,
+                    'guru' => $request->guru,
+                    'jabatan' => $request->jabatan,
+                ]
+            );
+
+            return redirect()->back()->with('success','Guru berhasil diupdate');
+
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('info','Guru gagal diupdate');
         }
     }
 

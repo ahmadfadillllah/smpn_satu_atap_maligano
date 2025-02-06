@@ -25,6 +25,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nama</th>
+                                        <th>NIP</th>
                                         <th>Jabatan</th>
                                         <th>Status</th>
                                         <th>Aksi</th>
@@ -44,6 +45,7 @@
                                                     </div>
                                                 </div>
                                             </td>
+                                            <td>{{ $gr->nip }}</td>
                                             <td>{{ $gr->jabatan }}</td>
                                             @if ($gr->statusenabled == true)
                                                 <td class="text-success"><i class="fas fa-circle f-10 m-r-10"></i> Aktif</td>

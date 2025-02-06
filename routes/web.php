@@ -8,6 +8,7 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JadwalPembelajaranController;
 use App\Http\Controllers\KeaktifanController;
+use App\Http\Controllers\KehadiranController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MateriPembelajaranController;
 use App\Http\Controllers\NamaPelajaranController;
@@ -74,6 +75,12 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/ppdb/post', [PPDBController::class, 'post'])->name('ppdb.post');
     Route::get('/ppdb/edit/{uuid}', [PPDBController::class, 'edit'])->name('ppdb.edit');
     Route::post('/ppdb/update/{uuid}', [PPDBController::class, 'update'])->name('ppdb.update');
+
+    //Kehadiran Guru
+    Route::get('/absen-teacher/index', [KehadiranController::class, 'index'])->name('kehadiran.index');
+    Route::get('/absen-teacher/insert', [KehadiranController::class, 'insert'])->name('kehadiran.insert');
+    Route::post('/absen-teacher/insert/post', [KehadiranController::class, 'post'])->name('kehadiran.post');
+    Route::post('/absen-teacher/insert/update/{uuid}', [KehadiranController::class, 'update'])->name('kehadiran.update');
 
     //Keaktifan Guru
     Route::get('/active-teacher/index', [KeaktifanController::class, 'index'])->name('keaktifan.index');
