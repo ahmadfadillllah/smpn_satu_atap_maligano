@@ -12,6 +12,11 @@
                             <h2 class="mb-0">Keaktifan Guru</h2>
                         </div>
                     </div>
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <a href="#" class="btn btn-success d-inline-flex">
+                            Download Report
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,34 +29,27 @@
                             <table id="dom-jqry" class="table table-striped table-bordered nowrap">
                                 <thead>
                                     <tr>
-                                        <th>Nama Guru</th>
-                                        <th>Kelas</th>
-                                        <th>Status Keaktifan</th>
+                                        <th style="text-align: left">NIP</th>
+                                        <th style="text-align: left">Nama Guru</th>
+                                        <th style="text-align: left">Kelas</th>
+                                        <th style="text-align: left">Status Keaktifan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($guru as $g)
                                         <tr>
-                                            <td>{{ $g['guru'] }}</td>
-                                            <td>{{ $g['kelas'] }}</td>
+                                            <td style="text-align: left">{{ $g->nip }}</td>
+                                            <td style="text-align: left">{{ $g->guru }}</td>
+                                            <td style="text-align: left">{{ $g->kelas }}</td>
                                             <td>
-                                                @if ($g['status_keaktifan'] == 'Aktif')
-                                                    <span class="badge bg-success">Aktif</span>
-                                                @else
-                                                    <span class="badge bg-warning">Tidak Aktif</span>
-                                                @endif
+                                                <p>Hari: {{ $g->hari }}</p>
+                                                <p>Hadir: {{ $g->hadir }}</p>
+                                                <p>Tidak Hadir: {{ $g->tidakHadir }}</p>
                                             </td>
                                             {{-- <td>{{ $g['status_keaktifan'] }}</td> --}}
                                         </tr>
                                     @endforeach
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Nama Guru</th>
-                                        <th>Kelas</th>
-                                        <th>Status Keaktifan</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>
