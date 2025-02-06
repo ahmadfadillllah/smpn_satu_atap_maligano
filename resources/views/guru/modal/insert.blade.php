@@ -10,6 +10,10 @@
                 @csrf
                 <div class="modal-body">
                     <div class="mb-3">
+                        <label class="form-label">NIP</label>
+                        <input type="text" class="form-control" placeholder="Masukkan NIP" name="nip" required>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Nama Guru</label>
                         <input type="text" class="form-control" placeholder="Masukkan nama guru" name="guru" required>
                     </div>
