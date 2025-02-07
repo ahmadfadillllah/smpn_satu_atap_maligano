@@ -84,6 +84,8 @@ Route::group(['middleware' => ['auth']], function(){
 
     //Keaktifan Guru
     Route::get('/active-teacher/index', [KeaktifanController::class, 'index'])->name('keaktifan.index');
+    Route::post('/active-teacher/downloadExcel', [KeaktifanController::class, 'downloadExcel'])->name('keaktifan.downloadExcel');
+    Route::post('/active-teacher/downloadPDF', [KeaktifanController::class, 'downloadPDF'])->name('keaktifan.downloadPDF');
 
     //Galeri
     Route::get('/galeri/index', [GaleriController::class, 'index'])->name('galeri.index');

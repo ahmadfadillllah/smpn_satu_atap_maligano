@@ -13,10 +13,11 @@
                         </div>
                     </div>
                     <div class="col-md-6 d-flex justify-content-end">
-                        <a href="#" class="btn btn-success d-inline-flex">
+                        <a href="#" class="btn btn-success d-inline-flex" data-bs-toggle="modal" data-bs-target="#downloadReport">
                             Download Report
                         </a>
                     </div>
+                    @include('keaktifan.modal.insert')
                 </div>
             </div>
         </div>
