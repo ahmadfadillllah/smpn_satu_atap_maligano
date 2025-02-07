@@ -26,6 +26,30 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
+                        <form action="" method="GET">
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label class="form-label">Semester</label>
+                                    <select class="form-control" name="semester" required>
+                                        <option selected disabled>Pilih semester</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Tahun Ajaran</label>
+                                    <select class="form-control" name="tahun_ajaran" required>
+                                        <option value="2023/2024">2023/2024</option>
+                                        <option value="2024/2025">2024/2025</option>
+                                        <option value="2025/2026" selected>2025/2026</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-success">Cari</button>
+                                </div>
+                            </div>
+                        </form>
+
                         <div class="table-responsive dt-responsive">
                             <table id="dom-jqry" class="table table-striped table-bordered nowrap">
                                 <thead>

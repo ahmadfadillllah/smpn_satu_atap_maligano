@@ -21,6 +21,7 @@ return new class extends Migration
             $table->time('jam_masuk')->nullable();
             $table->time('jam_selesai')->nullable();
             $table->string('semester')->nullable();
+            $table->string('tahun_ajaran')->nullable();
             $table->timestamps();
         });
     }

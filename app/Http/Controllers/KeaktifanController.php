@@ -9,8 +9,9 @@ use Barryvdh\DomPDF\Facade\Pdf;
 class KeaktifanController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
+
         $guru = DB::table('guru_m as gr')
         ->leftJoin('absensi_t as ab', 'gr.id', '=', 'ab.guru_id')
         ->leftJoin('kelas_m as kl', 'gr.id', '=', 'kl.guru_id')
@@ -23,8 +24,14 @@ class KeaktifanController extends Controller
             DB::raw('IFNULL(GROUP_CONCAT(DISTINCT jd.hari ORDER BY FIELD(jd.hari, "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu") ASC SEPARATOR ", "), "Tidak Ada") as hari'),
             DB::raw('COUNT(DISTINCT CASE WHEN ab.status = "Hadir" THEN ab.id END) as hadir'),  // Menghitung jumlah kehadiran unik
             DB::raw('COUNT(DISTINCT CASE WHEN ab.status = "Tidak Hadir" THEN ab.id END) as tidakHadir')  // Menghitung jumlah ketidakhadiran unik
-        )
-        ->groupBy('gr.id', 'gr.nip', 'gr.guru', 'kl.kelas')
+        );
+        if(isset($request->semester)){
+            $guru = $guru->where('jd.semester', $request->semester);
+        }
+        if(isset($request->tahun_ajaran)){
+            $guru = $guru->where('jd.tahun_ajaran', $request->tahun_ajaran);
+        }
+        $guru = $guru->groupBy('gr.id', 'gr.nip', 'gr.guru', 'kl.kelas')
         ->get();
 
 

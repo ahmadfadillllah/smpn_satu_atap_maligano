@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLiveLabel">Tambah Jadwal Pembelajaran</h5>
+                <h5 class="modal-title" id="exampleModalLiveLabel">Ubah Jadwal Pembelajaran</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ route('jadwalpembelajaran.update', $ch->uuid) }}" method="post">
@@ -31,11 +31,12 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Semester</label>
-                        <select class="form-control" name="semester" required>
-                            <option selected value="{{ $ch->semester }}">{{ $ch->semester }}</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
+                        <label class="form-label">Tahun Ajaran</label>
+                        <select class="form-control" name="tahun_ajaran" required>
+                            <option selected value="{{ $ch->tahun_ajaran }}">{{ $ch->tahun_ajaran }}</option>
+                            <option value="2023/2024">2023/2024</option>
+                            <option value="2024/2025">2024/2025</option>
+                            <option value="2025/2026">2025/2026</option>
                         </select>
                     </div>
                     <div class="mb-3">

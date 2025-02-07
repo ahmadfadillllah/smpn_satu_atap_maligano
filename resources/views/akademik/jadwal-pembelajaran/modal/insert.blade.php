@@ -39,6 +39,14 @@
                         </select>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Tahun Ajaran</label>
+                        <select class="form-control" name="tahun_ajaran" required>
+                            <option value="2023/2024">2023/2024</option>
+                            <option value="2024/2025">2024/2025</option>
+                            <option value="2025/2026" selected>2025/2026</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Nama Pelajaran</label>
                         <select class="form-control" name="pelajaran_id" required>
                             <option selected disabled>Pilih pelajaran</option>

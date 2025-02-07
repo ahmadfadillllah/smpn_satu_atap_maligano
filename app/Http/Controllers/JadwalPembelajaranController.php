@@ -42,6 +42,7 @@ class JadwalPembelajaranController extends Controller
             'jd.pelajaran_id',
             'jd.jam_selesai',
             'jd.semester',
+            'jd.tahun_ajaran',
             'kl.kelas',
             'np.pelajaran',
 
@@ -79,6 +80,7 @@ class JadwalPembelajaranController extends Controller
         ->where('kelas_id', $request->kelas_id)
         ->where('semester', $request->semester)
         ->where('pelajaran_id', $request->pelajaran_id)
+        ->where('tahun_ajaran', $request->tahun_ajaran)
         ->where('statusenabled', true)->first();
 
         // dd($request->all());
@@ -89,6 +91,7 @@ class JadwalPembelajaranController extends Controller
                     'hari' => $request->hari,
                     'kelas_id' => $request->kelas_id,
                     'semester' => $request->semester,
+                    'tahun_ajaran' => $request->tahun_ajaran,
                     'pelajaran_id' => $request->pelajaran_id,
                     'jam_masuk' => $request->jam_masuk,
                     'jam_selesai' => $request->jam_selesai,
@@ -113,6 +116,7 @@ class JadwalPembelajaranController extends Controller
                     'hari' => $request->hari,
                     'kelas_id' => $request->kelas_id,
                     'semester' => $request->semester,
+                    'tahun_ajaran' => $request->tahun_ajaran,
                     'pelajaran_id' => $request->pelajaran_id,
                     'jam_masuk' => $request->jam_masuk,
                     'jam_selesai' => $request->jam_selesai,
