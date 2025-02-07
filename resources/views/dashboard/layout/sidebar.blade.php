@@ -68,7 +68,21 @@
                         <span class="pc-mtext">PPDB</span>
                     </a>
                 </li>
-                <li class="pc-item">
+                <li class="pc-item pc-hasmenu">
+                    <a href="#!" class="pc-link">
+                        <span class="pc-micon">
+                            <img src="{{ asset('dashboard') }}/assets/images/widget/teacher.png" >
+                        </span>
+                        <span class="pc-mtext">Keaktifan Guru</span>
+                        <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+                    </a>
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link" href="{{ route('kehadiran.index') }}">Kehadiran</a></li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('keaktifan.index') }}">Keaktifan</a></li>
+                    </ul>
+
+                </li>
+                {{-- <li class="pc-item">
                     <a href="{{ route('kehadiran.index') }}" class="pc-link">
                         <span class="pc-micon">
                             <img src="{{ asset('dashboard') }}/assets/images/widget/absence.png" >
@@ -83,7 +97,7 @@
                         </span>
                         <span class="pc-mtext">Keaktifan Guru</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="pc-item">
                     <a href="{{ route('galeri.index') }}" class="pc-link">
                         <span class="pc-micon">
