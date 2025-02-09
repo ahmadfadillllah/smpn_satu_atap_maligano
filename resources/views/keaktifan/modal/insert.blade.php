@@ -21,8 +21,9 @@
                         <label class="form-label">Pilih Tahun Ajaran</label>
                         <select class="form-control" name="tahun_ajaran" required>
                             <option value="Semua Tahun Ajaran" selected>Semua Tahun Ajaran</option>
-                            <option value="1">Semester 1</option>
-                            <option value="2">Semester 2</option>
+                            <option value="2023/2024">2023/2024</option>
+                            <option value="2024/2025">2024/2025</option>
+                            <option value="2025/2026">2025/2026</option>
                         </select>
                     </div>
                 </div>

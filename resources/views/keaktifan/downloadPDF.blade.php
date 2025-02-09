@@ -133,7 +133,7 @@
 <div class="container">
     <div class="table-wrapper">
         <h1 class="heading">Data Keaktifan Guru</h1>
-        <p class="heading">Semester: {{ $semester }}, Tahun Ajaran: {{ $tahunAjaran }}</p>
+        <p class="heading">Semester: {{ $semester }}, Tahun: {{ $tahunAjaran }}</p>
         <table>
             <thead>
                 <tr>
