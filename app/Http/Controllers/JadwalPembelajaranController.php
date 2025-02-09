@@ -67,6 +67,8 @@ class JadwalPembelajaranController extends Controller
             return $hariUrutan[$item->first()->hari];
         });
 
+        // dd($pelajaran);
+
         $data = [
             'kelas' => $kelas,
             'guru' => $guru,

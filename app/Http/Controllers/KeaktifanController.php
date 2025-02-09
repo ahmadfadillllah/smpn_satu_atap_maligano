@@ -74,9 +74,8 @@ class KeaktifanController extends Controller
         $guru = DB::table('guru_m as gr')
         ->leftJoin('absensi_t as ab', 'gr.id', '=', 'ab.guru_id')
         ->leftJoin('kelas_m as kl', 'gr.id', '=', 'kl.guru_id')
-        ->leftJoin('jadwal_pembelajaran_t as jd', 'jd.id', '=', 'jd.guru_id')
+        ->leftJoin('jadwal_pembelajaran_t as jd', 'kl.id', '=', 'jd.kelas_id')
         ->where('gr.statusenabled', true)
-        ->where('jd.semester', $request->semester)
         ->select(
             'gr.nip',
             'gr.guru',
@@ -84,18 +83,25 @@ class KeaktifanController extends Controller
             DB::raw('IFNULL(GROUP_CONCAT(DISTINCT jd.hari ORDER BY FIELD(jd.hari, "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu") ASC SEPARATOR ", "), "Tidak Ada") as hari'),
             DB::raw('COUNT(DISTINCT CASE WHEN ab.status = "Hadir" THEN ab.id END) as hadir'),  // Menghitung jumlah kehadiran unik
             DB::raw('COUNT(DISTINCT CASE WHEN ab.status = "Tidak Hadir" THEN ab.id END) as tidakHadir')  // Menghitung jumlah ketidakhadiran unik
-        )
-        ->groupBy('gr.id', 'gr.nip', 'gr.guru', 'kl.kelas')
+        );
+        if($request->semester != 'Semua Semester'){
+            $guru = $guru->where('jd.semester', $request->semester);
+        }
+        if($request->tahun_ajaran != 'Semua Tahun Ajaran'){
+            $guru = $guru->where('jd.tahun_ajaran', $request->tahun_ajaran);
+        }
+        $guru = $guru->groupBy('gr.id', 'gr.nip', 'gr.guru', 'kl.kelas')
         ->get();
 
         $guru = $guru->toArray();
         $semester = $request->semester;
+        $tahunAjaran = $request->tahun_ajaran;
 
         // dd($guru);
 
-        return view('keaktifan.downloadPDF', compact('guru', 'semester'));
+        // return view('keaktifan.downloadPDF', compact('guru', 'semester', 'tahunAjaran'));
 
-        $pdf = Pdf::loadView('keaktifan.downloadPDF', compact('guru', 'semester'));
+        $pdf = Pdf::loadView('keaktifan.downloadPDF', compact('guru', 'semester', 'tahunAjaran'));
         return $pdf->download('Laporan Keaktifan.pdf');
 
 

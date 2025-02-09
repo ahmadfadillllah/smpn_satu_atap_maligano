@@ -12,6 +12,15 @@
                     <div class="mb-3">
                         <label class="form-label">Pilih Semester</label>
                         <select class="form-control" name="semester" required>
+                            <option value="Semua Semester" selected>Semua Semester</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Pilih Tahun Ajaran</label>
+                        <select class="form-control" name="tahun_ajaran" required>
+                            <option value="Semua Tahun Ajaran" selected>Semua Tahun Ajaran</option>
                             <option value="1">Semester 1</option>
                             <option value="2">Semester 2</option>
                         </select>
