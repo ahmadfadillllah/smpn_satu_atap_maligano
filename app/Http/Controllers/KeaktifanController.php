@@ -74,7 +74,7 @@ class KeaktifanController extends Controller
         $guru = DB::table('guru_m as gr')
         ->leftJoin('absensi_t as ab', 'gr.id', '=', 'ab.guru_id')
         ->leftJoin('kelas_m as kl', 'gr.id', '=', 'kl.guru_id')
-        ->leftJoin('jadwal_pembelajaran_t as jd', 'kl.id', '=', 'jd.kelas_id')
+        ->leftJoin('jadwal_pembelajaran_t as jd', 'jd.id', '=', 'jd.guru_id')
         ->where('gr.statusenabled', true)
         ->where('jd.semester', $request->semester)
         ->select(
@@ -89,12 +89,13 @@ class KeaktifanController extends Controller
         ->get();
 
         $guru = $guru->toArray();
+        $semester = $request->semester;
 
         // dd($guru);
 
-        // return view('keaktifan.downloadPDF', compact('guru'));
+        return view('keaktifan.downloadPDF', compact('guru', 'semester'));
 
-        $pdf = Pdf::loadView('keaktifan.downloadPDF', compact('guru'));
+        $pdf = Pdf::loadView('keaktifan.downloadPDF', compact('guru', 'semester'));
         return $pdf->download('Laporan Keaktifan.pdf');
 
 

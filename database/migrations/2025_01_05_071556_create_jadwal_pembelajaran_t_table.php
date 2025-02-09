@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('hari')->nullable();
             $table->foreignId('kelas_id')->constrained('kelas_m');
             $table->foreignId('pelajaran_id')->constrained('nama_pelajaran_m');
+            $table->foreignId('guru_id')->constrained('guru_m');
             $table->time('jam_masuk')->nullable();
             $table->time('jam_selesai')->nullable();
             $table->string('semester')->nullable();

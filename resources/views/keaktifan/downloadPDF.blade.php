@@ -133,6 +133,7 @@
 <div class="container">
     <div class="table-wrapper">
         <h1 class="heading">Data Keaktifan Guru</h1>
+        <p class="heading">Semester {{ $semester }}</p>
         <table>
             <thead>
                 <tr>

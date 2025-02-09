@@ -31,6 +31,15 @@
                         </select>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Guru</label>
+                        <select class="form-control" name="guru_id" required>
+                            <option selected value="{{ $ch->guru_id }}">{{ $ch->guru }}</option>
+                            @foreach ($data['guru'] as $gr)
+                                <option value="{{ $gr->id }}">{{ $gr->guru }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Tahun Ajaran</label>
                         <select class="form-control" name="tahun_ajaran" required>
                             <option selected value="{{ $ch->tahun_ajaran }}">{{ $ch->tahun_ajaran }}</option>

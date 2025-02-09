@@ -31,6 +31,15 @@
                         </select>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Guru</label>
+                        <select class="form-control" name="guru_id" required>
+                            <option selected disabled>Pilih guru</option>
+                            @foreach ($data['guru'] as $gr)
+                                <option value="{{ $gr->id }}">{{ $gr->guru }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Semester</label>
                         <select class="form-control" name="semester" required>
                             <option selected disabled>Pilih semester</option>

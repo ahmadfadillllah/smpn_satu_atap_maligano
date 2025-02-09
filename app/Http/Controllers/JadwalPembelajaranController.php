@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guru;
 use App\Models\JadwalPembelajaran;
 use App\Models\Kelas;
 use App\Models\NamaPelajaran;
@@ -26,11 +27,12 @@ class JadwalPembelajaranController extends Controller
         ];
 
         $kelas = Kelas::where('statusenabled', true)->get();
+        $guru = Guru::where('statusenabled', true)->get();
         $nama_pelajaran = NamaPelajaran::where('statusenabled', true)->get();
 
         $pelajaran = DB::table('jadwal_pembelajaran_t as jd')
         ->leftJoin('kelas_m as kl', 'jd.kelas_id', 'kl.id')
-        ->leftJoin('guru_m as gr', 'kl.guru_id', 'gr.id')
+        ->leftJoin('guru_m as gr', 'jd.guru_id', 'gr.id')
         ->leftJoin('nama_pelajaran_m as np', 'jd.pelajaran_id', 'np.id')
         ->select(
             'jd.hari',
@@ -39,6 +41,7 @@ class JadwalPembelajaranController extends Controller
             'gr.guru',
             'jd.jam_masuk',
             'jd.kelas_id',
+            'jd.guru_id',
             'jd.pelajaran_id',
             'jd.jam_selesai',
             'jd.semester',
@@ -66,6 +69,7 @@ class JadwalPembelajaranController extends Controller
 
         $data = [
             'kelas' => $kelas,
+            'guru' => $guru,
             'pelajaran' => $pelajaran,
             'nama_pelajaran' => $nama_pelajaran,
         ];
@@ -90,6 +94,7 @@ class JadwalPembelajaranController extends Controller
                     'uuid' => (string) Uuid::uuid4()->toString(),
                     'hari' => $request->hari,
                     'kelas_id' => $request->kelas_id,
+                    'guru_id' => $request->guru_id,
                     'semester' => $request->semester,
                     'tahun_ajaran' => $request->tahun_ajaran,
                     'pelajaran_id' => $request->pelajaran_id,
@@ -115,6 +120,7 @@ class JadwalPembelajaranController extends Controller
                 [
                     'hari' => $request->hari,
                     'kelas_id' => $request->kelas_id,
+                    'guru_id' => $request->guru_id,
                     'semester' => $request->semester,
                     'tahun_ajaran' => $request->tahun_ajaran,
                     'pelajaran_id' => $request->pelajaran_id,
