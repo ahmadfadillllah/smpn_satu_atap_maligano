@@ -38,9 +38,9 @@
                     <div class="section-title text-justify col-12 mb-45">
                         <h3 class="heading">profil</h3>
                         <div class="excerpt">
-                            <p style="font-family:Arial, Helvetica, sans-serif">UPTD SMP NEGERI SATU ATAP 1 MALIGANO merupakan salah satu sekolah jenjang SMP berstatus Negeri yang berada di wilayah Kec. Maligano, Kab. Muna, Sulawesi Tenggara. UPTD SMP NEGERI SATU ATAP 1 MALIGANO didirikan pada tanggal 1 Januari 1970 dengan Nomor SK Pendirian yang berada dalam naungan Kementerian Pendidikan dan Kebudayaan. Kepala Sekolah UPTD SMP NEGERI SATU ATAP 1 MALIGANO saat ini adalah Mustarim. Operator yang bertanggung jawab adalah Zaiba, S. Pd. , M. Pd. .
-
-                                Dengan adanya keberadaan UPTD SMP NEGERI SATU ATAP 1 MALIGANO, diharapkan dapat memberikan kontribusi dalam mencerdaskan anak bangsa di wilayah Kec. Maligano, Kab. Muna.</p>
+                            <p style="font-family:Arial, Helvetica, sans-serif">
+                                UPTD SMP Negeri Satu Atap 1 Maligano merupakan salah satu sekolah jenjang SMP berstatus negeri yang berada di Desa Langkoroni, Kec. Maligano, Kab. Muna, Sulawesi Tenggara. Kepala sekolah UPTD SMP Negeri Satu Atap 1 Maligano saat ini adalah Mustarim, S.Pd. Operator yang bertanggung jawab adalah Rinto Gunadi. Dengan adanya keberadaan UPTD SMP Negeri Satu Atap 1 Maligano, diharapkan dapat memberikan kontribusi dalam mencerdaskan anak bangsa di Desa Langkoroni, Kec Maligano, Kab. Muna.
+                            </p>
                         </div>
                         <i class="icofont icofont-traffic-light"></i>
                     </div>
