@@ -26,10 +26,10 @@ class KeaktifanController extends Controller
             DB::raw('COUNT(DISTINCT CASE WHEN ab.status = "Tidak Hadir" THEN ab.id END) as tidakHadir')  // Menghitung jumlah ketidakhadiran unik
         );
         if(isset($request->semester)){
-            $guru = $guru->where('jd.semester', $request->semester);
+            $guru = $guru->orWhere('jd.semester', $request->semester);
         }
         if(isset($request->tahun_ajaran)){
-            $guru = $guru->where('jd.tahun_ajaran', $request->tahun_ajaran);
+            $guru = $guru->orWhere('jd.tahun_ajaran', $request->tahun_ajaran);
         }
         $guru = $guru->groupBy('gr.id', 'gr.nip', 'gr.guru', 'kl.kelas')
         ->get();
@@ -85,10 +85,10 @@ class KeaktifanController extends Controller
             DB::raw('COUNT(DISTINCT CASE WHEN ab.status = "Tidak Hadir" THEN ab.id END) as tidakHadir')  // Menghitung jumlah ketidakhadiran unik
         );
         if($request->semester != 'Semua Semester'){
-            $guru = $guru->where('jd.semester', $request->semester);
+            $guru = $guru->orWhere('jd.semester', $request->semester);
         }
         if($request->tahun_ajaran != 'Semua Tahun Ajaran'){
-            $guru = $guru->where('jd.tahun_ajaran', $request->tahun_ajaran);
+            $guru = $guru->orWhere('jd.tahun_ajaran', $request->tahun_ajaran);
         }
         $guru = $guru->groupBy('gr.id', 'gr.nip', 'gr.guru', 'kl.kelas')
         ->get();
